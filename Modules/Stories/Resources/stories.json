@@ -1,0 +1,23 @@
+[
+  {
+    "id": "B8E9A9BC-6D2D-4F2B-9A0B-5C4F788E2A10",
+    "title": "El gato curioso",
+    "text": "El gato Tomás encontró una caja pequeña. Dentro había una pelota roja. Tomás la empujó y la pelota rodó por la sala.",
+    "minAge": 7,
+    "maxAge": 10
+  },
+  {
+    "id": "6F4B3E31-8F39-4B98-BB20-7B5A7DDF2B01",
+    "title": "La lluvia y el paraguas",
+    "text": "Ana salió a caminar y empezó a llover. Abrió su paraguas azul y siguió cantando bajo la lluvia.",
+    "minAge": 7,
+    "maxAge": 10
+  },
+  {
+    "id": "E3E1A6E7-2C28-4B8C-9E7A-6CE0B26E01A4",
+    "title": "Un paseo en bicicleta",
+    "text": "Luis dio un paseo en bicicleta por el parque. Saludó a sus amigos y vio un perro jugando con una pelota.",
+    "minAge": 7,
+    "maxAge": 10
+  }
+]
