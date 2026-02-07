@@ -23,7 +23,7 @@ public struct TypingPracticeView: View {
                 Spacer(minLength: 8)
             }
             .padding()
-            .onAppear { viewModel.loadStories() }
+            .task { await viewModel.loadStories() }
             .navigationTitle("Práctica de escritura")
         }
         .accessibilityIdentifier("typing_practice_view")
@@ -80,7 +80,7 @@ public struct TypingPracticeView: View {
 
     private var actionBar: some View {
         HStack(spacing: 12) {
-            Button("Iniciar") { viewModel.startSession() }
+            Button("Iniciar") { Task { await viewModel.startSession() } }
                 .buttonStyle(.borderedProminent)
                 .accessibilityIdentifier("typing_start_button")
             Button("Finalizar") { viewModel.finishSession() }
@@ -95,11 +95,13 @@ public struct TypingPracticeView: View {
                 VStack(alignment: .leading, spacing: 6) {
                     Text("Resultados")
                         .font(.headline)
+                        .accessibilityIdentifier("typing_results_label")
                     Text("Tiempo de reacción: \(format(result.metrics.reactionTime))")
                     Text("Tiempo total: \(format(result.metrics.totalTime))")
                     Text("Errores: \(result.metrics.errorCount)")
                 }
                 .padding(.top, 8)
+                .accessibilityElement(children: .contain)
                 .accessibilityIdentifier("typing_results")
             }
         }

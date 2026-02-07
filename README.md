@@ -50,6 +50,13 @@ A SwiftUI macOS app for children ages 7–10 to learn typing and reading skills 
 - **ReadingPractice**: Reading flow with per-word timing.
 - **App**: Composition root + SwiftUI tabs.
 
+## Feature Functionality
+- Typing practice: children copy story text, with reaction time, total time, and error metrics.
+- Reading practice: timed per-word reading without typing input.
+- Accessibility: adjustable font size and high contrast mode.
+- Local stories: bundled Spanish stories for ages 7–10.
+- Local persistence: stores settings and session results on disk.
+
 ## Metrics Isolation
 All metrics are defined in `Modules/Core/Sources/Domain/Metrics.swift` and reused by Typing and Reading features.
 

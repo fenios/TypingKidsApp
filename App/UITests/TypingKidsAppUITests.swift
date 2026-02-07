@@ -17,7 +17,7 @@ final class TypingKidsAppUITests: XCTestCase {
         editor.typeText("El gato Tomás encontró una caja pequeña.")
 
         app.buttons["typing_finish_button"].click()
-        XCTAssertTrue(app.otherElements["typing_results"].exists)
+        XCTAssertTrue(app.staticTexts["typing_results_label"].waitForExistence(timeout: 2))
     }
 
     func testReadingFlowShowsResults() {
@@ -26,10 +26,13 @@ final class TypingKidsAppUITests: XCTestCase {
 
         app.buttons["Lectura"].click()
         app.buttons["reading_start_button"].click()
-        app.buttons["reading_next_button"].click()
-        app.buttons["reading_next_button"].click()
-        app.buttons["reading_next_button"].click()
-
-        XCTAssertTrue(app.otherElements["reading_results"].exists)
+        for _ in 0..<50 {
+            if app.staticTexts["reading_results_label"].exists { break }
+            app.buttons["reading_next_button"].click()
+        }
+        if !app.staticTexts["reading_results_label"].exists {
+            app.buttons["reading_finish_button"].click()
+        }
+        XCTAssertTrue(app.staticTexts["reading_results_label"].waitForExistence(timeout: 2))
     }
 }

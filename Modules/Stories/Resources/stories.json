@@ -19,5 +19,40 @@
     "text": "Luis dio un paseo en bicicleta por el parque. Saludó a sus amigos y vio un perro jugando con una pelota.",
     "minAge": 7,
     "maxAge": 10
+  },
+  {
+    "id": "9C2B8A10-2C2D-4C1F-90A1-0B4B5C3D2E11",
+    "title": "El árbol mágico",
+    "text": "En el jardín había un árbol muy alto. Cada mañana, Sara encontraba una hoja brillante con una palabra nueva para aprender.",
+    "minAge": 7,
+    "maxAge": 10
+  },
+  {
+    "id": "1A7F4B9C-5D4E-4F0B-8B22-5F2C7E9A0B33",
+    "title": "El día del mercado",
+    "text": "Miguel fue al mercado con su abuela. Compraron plátanos, queso y pan. Al volver, olía a sopa caliente.",
+    "minAge": 7,
+    "maxAge": 10
+  },
+  {
+    "id": "7F6E5D4C-3B2A-1F0E-9D8C-7B6A5F4E3D22",
+    "title": "La aventura en la cueva",
+    "text": "Nora y Pablo entraron a una cueva con una linterna. Escucharon gotas de agua y vieron dibujos en las paredes.",
+    "minAge": 8,
+    "maxAge": 10
+  },
+  {
+    "id": "4E3D2C1B-0A9B-8C7D-6E5F-4A3B2C1D0E44",
+    "title": "El cohete de cartón",
+    "text": "Con cajas viejas, Diego construyó un cohete. Pintó estrellas y soñó con viajar a la Luna.",
+    "minAge": 7,
+    "maxAge": 9
+  },
+  {
+    "id": "A1B2C3D4-E5F6-47A8-9B0C-1D2E3F4A5B66",
+    "title": "La fiesta de cumpleaños",
+    "text": "Era el cumpleaños de Clara. Hubo globos, música y una torta con velas. Todos cantaron y aplaudieron.",
+    "minAge": 7,
+    "maxAge": 10
   }
 ]

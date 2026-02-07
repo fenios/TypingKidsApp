@@ -13,13 +13,14 @@ private final class FixedClock: Clock {
     }
 }
 
-private struct StubStoryRepository: StoryRepository {
+private struct StubStoryRepository: StoryRepository, Sendable {
     let stories: [Story]
-    func loadStories() throws -> [Story] { stories }
+    func loadStories() async throws -> [Story] { stories }
 }
 
+@MainActor
 final class TypingPracticeViewModelTests: XCTestCase {
-    func testFinishSessionStoresResult() throws {
+    func testFinishSessionStoresResult() async throws {
         let story = Story(id: UUID(), title: "Prueba", text: "hola", minAge: 7, maxAge: 10)
         let repo = StubStoryRepository(stories: [story])
         let store = InMemoryKeyValueStore()
@@ -30,8 +31,8 @@ final class TypingPracticeViewModelTests: XCTestCase {
             Date(timeIntervalSince1970: 4)
         ])
         let viewModel = TypingPracticeViewModel(storyRepository: repo, store: store, clock: clock)
-        viewModel.loadStories()
-        viewModel.startSession()
+        await viewModel.loadStories()
+        await viewModel.startSession()
         viewModel.updateTypedText("hola")
         viewModel.finishSession()
 

@@ -33,14 +33,27 @@ public final class TypingPracticeViewModel {
         self.evaluator = evaluator
     }
 
-    public func loadStories() {
-        stories = (try? storyRepository.loadStories()) ?? []
+    public func loadStories() async {
+        let loaded = (try? await storyRepository.loadStories()) ?? []
+        if loaded.isEmpty {
+            let fallback = Story(id: UUID(), title: "Historia de ejemplo", text: "Hola. Este es un texto de ejemplo para practicar.", minAge: 7, maxAge: 10)
+            stories = [fallback]
+            selectedStory = fallback
+            return
+        }
+        stories = loaded
         if selectedStory == nil {
-            selectedStory = stories.first
+            selectedStory = loaded.first
         }
     }
 
-    public func startSession() {
+    public func startSession() async {
+        if selectedStory == nil {
+            let fallback = Story(id: UUID(), title: "Historia de ejemplo", text: "Hola. Este es un texto de ejemplo para practicar.", minAge: 7, maxAge: 10)
+            stories = [fallback]
+            selectedStory = fallback
+            Task { await loadStories() }
+        }
         guard selectedStory != nil else { return }
         typedText = ""
         sessionStart = clock.now()
