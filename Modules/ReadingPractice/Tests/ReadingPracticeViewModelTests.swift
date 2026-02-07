@@ -33,7 +33,7 @@ final class ReadingPracticeViewModelTests: XCTestCase {
             Date(timeIntervalSince1970: 3)
         ])
 
-        let viewModel = await ReadingPracticeViewModel(storyRepository: repo, store: store, clock: clock)
+        let viewModel = ReadingPracticeViewModel(storyRepository: repo, store: store, clock: clock)
         await viewModel.loadStories()
         await viewModel.startSession()
         viewModel.nextWord()
@@ -44,3 +44,4 @@ final class ReadingPracticeViewModelTests: XCTestCase {
         XCTAssertEqual(results?.first?.metrics.wordTimings.count, 2)
     }
 }
+
