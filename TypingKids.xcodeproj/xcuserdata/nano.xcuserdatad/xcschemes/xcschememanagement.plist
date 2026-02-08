@@ -60,33 +60,47 @@
 			<key>orderHint</key>
 			<integer>8</integer>
 		</dict>
-		<key>TypingKidsApp.xcscheme_^#shared#^_</key>
+		<key>StoryManagement.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>isShown</key>
+			<true/>
+			<key>orderHint</key>
+			<integer>9</integer>
+		</dict>
+		<key>StoryPersistence.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<true/>
 			<key>orderHint</key>
 			<integer>10</integer>
 		</dict>
-		<key>TypingPractice.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>isShown</key>
-			<true/>
-			<key>orderHint</key>
-			<integer>11</integer>
-		</dict>
-		<key>UserManagement.xcscheme_^#shared#^_</key>
+		<key>TypingKidsApp.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<true/>
 			<key>orderHint</key>
 			<integer>12</integer>
 		</dict>
-		<key>UserProgress.xcscheme_^#shared#^_</key>
+		<key>TypingPractice.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<true/>
 			<key>orderHint</key>
 			<integer>13</integer>
+		</dict>
+		<key>UserManagement.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>isShown</key>
+			<true/>
+			<key>orderHint</key>
+			<integer>14</integer>
+		</dict>
+		<key>UserProgress.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>isShown</key>
+			<true/>
+			<key>orderHint</key>
+			<integer>15</integer>
 		</dict>
 	</dict>
 </dict>

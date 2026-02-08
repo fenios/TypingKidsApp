@@ -129,6 +129,53 @@ let project = Project(
             dependencies: [.target(name: "Stories")]
         ),
 
+        // Story Persistence
+        .target(
+            name: "StoryPersistence",
+            destinations: .macOS,
+            product: .staticFramework,
+            bundleId: "\(bundlePrefix).storypersistence",
+            deploymentTargets: deploymentTargets,
+            infoPlist: .default,
+            sources: ["Modules/StoryPersistence/Sources/**"],
+            resources: [],
+            dependencies: [
+                .target(name: "Stories"),
+                .sdk(name: "SwiftData", type: .framework, status: .required)
+            ]
+        ),
+        .target(
+            name: "StoryPersistenceTests",
+            destinations: .macOS,
+            product: .unitTests,
+            bundleId: "\(bundlePrefix).storypersistence.tests",
+            infoPlist: .default,
+            sources: ["Modules/StoryPersistence/Tests/**"],
+            dependencies: [.target(name: "StoryPersistence")]
+        ),
+
+        // Story Management
+        .target(
+            name: "StoryManagement",
+            destinations: .macOS,
+            product: .staticFramework,
+            bundleId: "\(bundlePrefix).storymanagement",
+            deploymentTargets: deploymentTargets,
+            infoPlist: .default,
+            sources: ["Modules/StoryManagement/Sources/**"],
+            resources: [],
+            dependencies: [.target(name: "Stories")]
+        ),
+        .target(
+            name: "StoryManagementTests",
+            destinations: .macOS,
+            product: .unitTests,
+            bundleId: "\(bundlePrefix).storymanagement.tests",
+            infoPlist: .default,
+            sources: ["Modules/StoryManagement/Tests/**"],
+            dependencies: [.target(name: "StoryManagement")]
+        ),
+
         // Accessibility Settings
         .target(
             name: "AccessibilitySettings",
@@ -279,7 +326,9 @@ let project = Project(
                 .target(name: "LanguageProcessing"),
                 .target(name: "UserManagement"),
                 .target(name: "UserProgress"),
-                .target(name: "Statistics")
+                .target(name: "Statistics"),
+                .target(name: "StoryPersistence"),
+                .target(name: "StoryManagement")
             ]
         ),
         .target(

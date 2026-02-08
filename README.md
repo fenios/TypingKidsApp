@@ -39,6 +39,11 @@ A SwiftUI macOS app for children ages 7–10 to learn typing and reading skills 
     ├── ReadingPractice/
     │   ├── Sources/Domain
     │   └── Sources/Presentation
+    ├── StoryPersistence/
+    │   └── Sources/Data
+    ├── StoryManagement/
+    │   ├── Sources/Domain
+    │   └── Sources/Presentation
     ├── UserManagement/
     │   ├── Sources/Domain
     │   ├── Sources/Data
@@ -68,6 +73,8 @@ A SwiftUI macOS app for children ages 7–10 to learn typing and reading skills 
 - **UserManagement**: Local users, roles, PIN login, and session handling.
 - **UserProgress**: Per-user storage for typing and reading results.
 - **Statistics**: Tutor-only progress summaries and per-student stats.
+- **StoryPersistence**: SwiftData persistence for custom stories.
+- **StoryManagement**: Tutor-only CRUD for custom stories.
 - **App**: Composition root + SwiftUI tabs.
 
 ## Feature Functionality
@@ -80,6 +87,7 @@ A SwiftUI macOS app for children ages 7–10 to learn typing and reading skills 
 - Local login: users with roles (tutor, alumno) and PIN access.
 - Per-user results: typing and reading results are scoped to the active user.
 - Tutor statistics: tutor-only tab with overall and per-student summaries.
+- Custom stories: tutor-only management with SwiftData persistence and visibility for all users.
 
 ## Metrics Isolation
 All metrics and result models are defined in `Modules/Core/Sources/Domain/` and reused by Typing and Reading features.

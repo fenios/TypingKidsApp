@@ -224,6 +224,62 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "0354A55E98C6B5A9AAEB4FE7"
+               BuildableName = "StoryManagement.framework"
+               BlueprintName = "StoryManagement"
+               ReferencedContainer = "container:TypingKids.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "86C1CDDF51A81BA118A02402"
+               BuildableName = "StoryManagementTests.xctest"
+               BlueprintName = "StoryManagementTests"
+               ReferencedContainer = "container:TypingKids.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "75FD6EEB31BEBE86CA5F7CE9"
+               BuildableName = "StoryPersistence.framework"
+               BlueprintName = "StoryPersistence"
+               ReferencedContainer = "container:TypingKids.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E20A5D4402B486F5F1013D64"
+               BuildableName = "StoryPersistenceTests.xctest"
+               BlueprintName = "StoryPersistenceTests"
+               ReferencedContainer = "container:TypingKids.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "8D7C24A3940265F7EAF4BADA"
                BuildableName = "TypingKidsApp.app"
                BlueprintName = "TypingKidsApp"
@@ -396,6 +452,28 @@
                BlueprintIdentifier = "EE52730ED1176DD3924A13F3"
                BuildableName = "StoriesTests.xctest"
                BlueprintName = "StoriesTests"
+               ReferencedContainer = "container:TypingKids.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "86C1CDDF51A81BA118A02402"
+               BuildableName = "StoryManagementTests.xctest"
+               BlueprintName = "StoryManagementTests"
+               ReferencedContainer = "container:TypingKids.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E20A5D4402B486F5F1013D64"
+               BuildableName = "StoryPersistenceTests.xctest"
+               BlueprintName = "StoryPersistenceTests"
                ReferencedContainer = "container:TypingKids.xcodeproj">
             </BuildableReference>
          </TestableReference>

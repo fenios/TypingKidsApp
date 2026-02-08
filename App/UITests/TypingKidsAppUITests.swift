@@ -6,9 +6,8 @@ final class TypingKidsAppUITests: XCTestCase {
     }
 
     func testTypingFlowShowsResults() {
-        let app = XCUIApplication()
-        app.launchEnvironment["USE_SPEECH_MOCK"] = "1"
-        app.launch()
+        let app = launchApp()
+        createUser(app: app, name: "Tutor", role: "Tutor")
 
         app.buttons["Escritura"].click()
         app.buttons["typing_start_button"].click()
@@ -22,9 +21,8 @@ final class TypingKidsAppUITests: XCTestCase {
     }
 
     func testReadingFlowShowsResults() {
-        let app = XCUIApplication()
-        app.launchEnvironment["USE_SPEECH_MOCK"] = "1"
-        app.launch()
+        let app = launchApp()
+        createUser(app: app, name: "Tutor", role: "Tutor")
 
         app.buttons["Lectura"].click()
         app.buttons["reading_start_button"].click()
@@ -36,5 +34,46 @@ final class TypingKidsAppUITests: XCTestCase {
             app.buttons["reading_finish_button"].click()
         }
         XCTAssertTrue(app.staticTexts["reading_results_label"].waitForExistence(timeout: 2))
+    }
+
+    func testTutorSeesStoriesTab() {
+        let app = launchApp()
+        createUser(app: app, name: "Tutor", role: "Tutor")
+
+        XCTAssertTrue(app.buttons["Historias"].waitForExistence(timeout: 2))
+    }
+
+    func testAlumnoDoesNotSeeStoriesTab() {
+        let app = launchApp()
+        createUser(app: app, name: "Alumno", role: "Alumno")
+
+        XCTAssertFalse(app.buttons["Historias"].exists)
+    }
+
+    private func launchApp() -> XCUIApplication {
+        let app = XCUIApplication()
+        app.launchEnvironment["USE_SPEECH_MOCK"] = "1"
+        app.launchEnvironment["USE_IN_MEMORY_STORE"] = "1"
+        app.launch()
+        return app
+    }
+
+    private func createUser(app: XCUIApplication, name: String, role: String) {
+        XCTAssertTrue(app.buttons["create_user_button"].waitForExistence(timeout: 2))
+        app.buttons["create_user_button"].click()
+
+        let nameField = app.textFields["create_user_name_field"]
+        XCTAssertTrue(nameField.waitForExistence(timeout: 2))
+        nameField.click()
+        nameField.typeText(name)
+
+        app.buttons[role].click()
+
+        let pinField = app.secureTextFields["create_user_pin_field"]
+        pinField.click()
+        pinField.typeText("1234")
+
+        app.buttons["create_user_submit_button"].click()
+        XCTAssertTrue(app.otherElements["main_tab_view"].waitForExistence(timeout: 2))
     }
 }

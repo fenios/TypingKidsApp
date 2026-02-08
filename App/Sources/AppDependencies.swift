@@ -1,6 +1,7 @@
 import Foundation
 import Core
 import Persistence
+import SwiftData
 import Stories
 import TypingPractice
 import ReadingPractice
@@ -10,11 +11,15 @@ import LanguageProcessing
 import UserManagement
 import UserProgress
 import Statistics
+import StoryPersistence
+import StoryManagement
 
 @MainActor
 struct AppDependencies {
     let store: KeyValueStore
     let storyRepository: StoryRepository
+    let customStoryRepository: CustomStoryRepository
+    let storyContainer: ModelContainer
     let clock: Clock
     let normalizer: TextNormalizer
     let tokenizer: WordTokenizer
@@ -33,7 +38,21 @@ struct AppDependencies {
             store = (try? FileKeyValueStore(appIdentifier: "com.typingkids.app")) as KeyValueStore? ?? InMemoryKeyValueStore()
         }
 
-        storyRepository = LocalStoryRepository()
+        let storySchema = Schema([StoryRecord.self])
+        let storyConfig = ModelConfiguration(isStoredInMemoryOnly: useInMemory)
+        if let container = try? ModelContainer(for: storySchema, configurations: [storyConfig]) {
+            storyContainer = container
+        } else if let fallback = try? ModelContainer(for: storySchema, configurations: [ModelConfiguration(isStoredInMemoryOnly: true)]) {
+            storyContainer = fallback
+        } else {
+            storyContainer = try! ModelContainer(for: storySchema, configurations: [ModelConfiguration(isStoredInMemoryOnly: true)])
+        }
+
+        customStoryRepository = SwiftDataCustomStoryRepository(container: storyContainer)
+        storyRepository = CompositeStoryRepository(
+            localRepository: LocalStoryRepository(),
+            customRepository: customStoryRepository
+        )
         clock = SystemClock()
         normalizer = TextNormalizer()
         tokenizer = WordTokenizer()
@@ -82,6 +101,10 @@ struct AppDependencies {
 
     func makeStatisticsViewModel() -> StatisticsViewModel {
         StatisticsViewModel(userRepository: userRepository, resultsStore: resultsStore)
+    }
+
+    func makeStoryManagementViewModel(createdByUserId: UUID?) -> StoryManagementViewModel {
+        StoryManagementViewModel(repository: customStoryRepository, createdByUserId: createdByUserId)
     }
 
     private static func makeSpeechRecognizer() -> SpeechRecognizer {

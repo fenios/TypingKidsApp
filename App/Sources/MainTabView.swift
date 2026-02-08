@@ -4,6 +4,7 @@ import ReadingPractice
 import AccessibilitySettings
 import Statistics
 import UserManagement
+import StoryManagement
 
 @MainActor
 struct MainTabView: View {
@@ -15,6 +16,7 @@ struct MainTabView: View {
     @State private var readingViewModel: ReadingPracticeViewModel
     @State private var settingsViewModel: AccessibilitySettingsViewModel
     @State private var statisticsViewModel: StatisticsViewModel
+    @State private var storyManagementViewModel: StoryManagementViewModel
 
     init(user: User, dependencies: AppDependencies, onLogout: @escaping () -> Void) {
         self.user = user
@@ -24,6 +26,7 @@ struct MainTabView: View {
         _readingViewModel = State(initialValue: dependencies.makeReadingViewModel(userId: user.id))
         _settingsViewModel = State(initialValue: dependencies.makeSettingsViewModel())
         _statisticsViewModel = State(initialValue: dependencies.makeStatisticsViewModel())
+        _storyManagementViewModel = State(initialValue: dependencies.makeStoryManagementViewModel(createdByUserId: user.id))
     }
 
     var body: some View {
@@ -35,6 +38,8 @@ struct MainTabView: View {
             AccessibilitySettingsView(viewModel: settingsViewModel, onLogout: onLogout)
                 .tabItem { Label("Accesibilidad", systemImage: "figure.walk.circle") }
             if user.role == .tutor {
+                StoryManagementView(viewModel: storyManagementViewModel)
+                    .tabItem { Label("Historias", systemImage: "book.closed") }
                 StatisticsView(viewModel: statisticsViewModel)
                     .tabItem { Label("Estadísticas", systemImage: "chart.bar") }
             }
