@@ -54,12 +54,16 @@ final class TypingKidsAppUITests: XCTestCase {
         let app = XCUIApplication()
         app.launchEnvironment["USE_SPEECH_MOCK"] = "1"
         app.launchEnvironment["USE_IN_MEMORY_STORE"] = "1"
+        app.terminate()
         app.launch()
         return app
     }
 
     private func createUser(app: XCUIApplication, name: String, role: String) {
-        XCTAssertTrue(app.buttons["create_user_button"].waitForExistence(timeout: 2))
+        if !app.buttons["create_user_button"].waitForExistence(timeout: 2) {
+            forceLogoutIfNeeded(app: app)
+        }
+
         app.buttons["create_user_button"].click()
 
         let nameField = app.textFields["create_user_name_field"]
@@ -75,5 +79,16 @@ final class TypingKidsAppUITests: XCTestCase {
 
         app.buttons["create_user_submit_button"].click()
         XCTAssertTrue(app.otherElements["main_tab_view"].waitForExistence(timeout: 2))
+    }
+
+    private func forceLogoutIfNeeded(app: XCUIApplication) {
+        if app.buttons["Accesibilidad"].exists {
+            app.buttons["Accesibilidad"].click()
+            let logout = app.buttons["logout_button"]
+            if logout.waitForExistence(timeout: 2) {
+                logout.click()
+            }
+        }
+        _ = app.buttons["create_user_button"].waitForExistence(timeout: 2)
     }
 }

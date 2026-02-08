@@ -1,5 +1,6 @@
 import SwiftUI
 import Observation
+import Charts
 
 public struct StatisticsView: View {
     @Bindable private var viewModel: StatisticsViewModel
@@ -10,11 +11,48 @@ public struct StatisticsView: View {
 
     public var body: some View {
         NavigationStack {
-            content
-                .navigationTitle("Estadísticas")
+            ScrollView {
+                VStack(alignment: .leading, spacing: 16) {
+                    header
+                    content
+                }
+                .padding()
+            }
+            .navigationTitle("Estadísticas")
         }
         .task { await viewModel.load() }
+        .animation(.snappy, value: viewModel.series)
         .accessibilityIdentifier("statistics_view")
+    }
+
+    private var header: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Text("Progreso por usuario")
+                .font(.title2)
+                .bold()
+            userPicker
+        }
+    }
+
+    @ViewBuilder
+    private var userPicker: some View {
+        if viewModel.users.isEmpty {
+            Text("No hay usuarios para mostrar.")
+                .foregroundStyle(.secondary)
+        } else {
+            let picker = Picker("Usuario", selection: selectionBinding) {
+                ForEach(viewModel.users) { user in
+                    Text(user.displayName).tag(Optional(user.id))
+                }
+            }
+            .accessibilityIdentifier("statistics_user_picker")
+
+            if viewModel.users.count <= 3 {
+                picker.pickerStyle(.segmented)
+            } else {
+                picker.pickerStyle(.menu)
+            }
+        }
     }
 
     @ViewBuilder
@@ -22,70 +60,99 @@ public struct StatisticsView: View {
         if viewModel.isLoading {
             ProgressView("Cargando estadísticas...")
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-        } else if viewModel.overall == nil && viewModel.students.isEmpty {
-            Text("Aún no hay datos para mostrar.")
-                .foregroundStyle(.secondary)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-        } else {
-            List {
-                if let overall = viewModel.overall {
-                    Section("Resumen general") {
-                        StatRow(title: "Alumnos", value: "\(overall.studentCount)")
-                        StatRow(title: "Sesiones de escritura", value: "\(overall.typingSessions)")
-                        StatRow(title: "Sesiones de lectura", value: "\(overall.readingSessions)")
-                        StatRow(title: "Promedio de errores", value: formatNumber(overall.averageTypingErrors))
-                        StatRow(title: "Tiempo escritura", value: formatTime(overall.averageTypingTime))
-                        StatRow(title: "Tiempo lectura", value: formatTime(overall.averageReadingTime))
-                        StatRow(title: "Tiempo por palabra", value: formatTime(overall.averageReadingWordTime))
+        } else if viewModel.series?.isEmpty != false {
+            ContentUnavailableView(
+                "Sin datos",
+                systemImage: "chart.bar.xaxis",
+                description: Text("Registra sesiones para ver el progreso.")
+            )
+            .frame(maxWidth: .infinity, minHeight: 300)
+        } else if let series = viewModel.series {
+            VStack(spacing: 16) {
+                chartCard(title: "Palabras por minuto (WPM)") {
+                    Chart(series.wpmPoints) { point in
+                        LineMark(
+                            x: .value("Fecha", point.date),
+                            y: .value("WPM", point.value)
+                        )
+                        .interpolationMethod(.catmullRom)
+                        .foregroundStyle(by: .value("Serie", "WPM"))
+
+                        PointMark(
+                            x: .value("Fecha", point.date),
+                            y: .value("WPM", point.value)
+                        )
+                        .foregroundStyle(by: .value("Serie", "WPM"))
                     }
+                    .chartXAxisLabel("Fecha")
+                    .chartYAxisLabel("WPM")
+                    .chartLegend(position: .bottom, alignment: .leading)
                 }
 
-                Section("Alumnos") {
-                    if viewModel.students.isEmpty {
-                        Text("No hay alumnos registrados.")
-                            .foregroundStyle(.secondary)
-                    } else {
-                        ForEach(viewModel.students) { student in
-                            VStack(alignment: .leading, spacing: 6) {
-                                Text(student.user.displayName)
-                                    .font(.headline)
-                                StatRow(title: "Sesiones escritura", value: "\(student.typingCount)")
-                                StatRow(title: "Sesiones lectura", value: "\(student.readingCount)")
-                                StatRow(title: "Errores promedio", value: formatNumber(student.averageTypingErrors))
-                                StatRow(title: "Tiempo escritura", value: formatTime(student.averageTypingTime))
-                                StatRow(title: "Tiempo lectura", value: formatTime(student.averageReadingTime))
-                                StatRow(title: "Tiempo por palabra", value: formatTime(student.averageReadingWordTime))
-                            }
-                            .padding(.vertical, 4)
-                            .accessibilityElement(children: .contain)
-                            .accessibilityIdentifier("statistics_student_\(student.id.uuidString)")
-                        }
+                chartCard(title: "Tiempo promedio por palabra") {
+                    Chart(series.averageWordTimePoints) { point in
+                        AreaMark(
+                            x: .value("Fecha", point.date),
+                            y: .value("Segundos", point.value)
+                        )
+                        .foregroundStyle(.blue.gradient.opacity(0.25))
+
+                        LineMark(
+                            x: .value("Fecha", point.date),
+                            y: .value("Segundos", point.value)
+                        )
+                        .interpolationMethod(.catmullRom)
+                        .foregroundStyle(by: .value("Serie", "Tiempo por palabra"))
                     }
+                    .chartXAxisLabel("Fecha")
+                    .chartYAxisLabel("Segundos")
+                    .chartLegend(position: .bottom, alignment: .leading)
+                }
+
+                chartCard(title: "Errores de escritura") {
+                    Chart(series.typingErrorPoints) { point in
+                        BarMark(
+                            x: .value("Fecha", point.date),
+                            y: .value("Errores", point.value)
+                        )
+                        .foregroundStyle(by: .value("Serie", "Errores"))
+                    }
+                    .chartXAxisLabel("Fecha")
+                    .chartYAxisLabel("Errores")
+                    .chartLegend(position: .bottom, alignment: .leading)
                 }
             }
         }
     }
 
-    private func formatTime(_ value: TimeInterval) -> String {
-        "\(formatNumber(value)) s"
-    }
-
-    private func formatNumber(_ value: Double) -> String {
-        value.formatted(.number.precision(.fractionLength(2)))
-    }
-}
-
-private struct StatRow: View {
-    let title: String
-    let value: String
-
-    var body: some View {
-        HStack {
+    private func chartCard<Content: View>(title: String, @ViewBuilder content: () -> Content) -> some View {
+        VStack(alignment: .leading, spacing: 12) {
             Text(title)
-            Spacer()
-            Text(value)
-                .foregroundStyle(.secondary)
+                .font(.headline)
+            content()
+                .frame(height: 220)
         }
-        .accessibilityElement(children: .combine)
+        .padding()
+        .background(
+            LinearGradient(
+                colors: [Color(.windowBackgroundColor), Color(.windowBackgroundColor).opacity(0.6)],
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+        )
+        .clipShape(.rect(cornerRadius: 16))
+        .overlay(
+            RoundedRectangle(cornerRadius: 16)
+                .strokeBorder(.gray.opacity(0.2), lineWidth: 1)
+        )
+    }
+
+    private var selectionBinding: Binding<UUID?> {
+        Binding(
+            get: { viewModel.selectedUserId },
+            set: { newValue in
+                Task { await viewModel.selectUser(newValue) }
+            }
+        )
     }
 }

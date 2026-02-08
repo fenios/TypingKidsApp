@@ -237,7 +237,8 @@ let project = Project(
             dependencies: [
                 .target(name: "Core"),
                 .target(name: "UserManagement"),
-                .target(name: "UserProgress")
+                .target(name: "UserProgress"),
+                .sdk(name: "Charts", type: .framework, status: .required)
             ]
         ),
 

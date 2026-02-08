@@ -1,96 +1,54 @@
 import Foundation
 import Observation
-import Core
 import UserManagement
 import UserProgress
 
 @MainActor
 @Observable
 public final class StatisticsViewModel {
-    public private(set) var overall: OverallStats? = nil
-    public private(set) var students: [StudentStats] = []
+    public private(set) var users: [User] = []
+    public var selectedUserId: UUID? = nil
+    public private(set) var series: StatisticsSeries? = nil
     public private(set) var isLoading: Bool = false
 
-    private let userRepository: UserRepository
-    private let resultsStore: UserResultsStore
+    private let provider: StatisticsProviding
 
-    public init(userRepository: UserRepository, resultsStore: UserResultsStore) {
-        self.userRepository = userRepository
-        self.resultsStore = resultsStore
+    public init(provider: StatisticsProviding) {
+        self.provider = provider
+    }
+
+    public convenience init(userRepository: UserRepository, resultsStore: UserResultsStore) {
+        self.init(provider: DefaultStatisticsProvider(userRepository: userRepository, resultsStore: resultsStore))
     }
 
     public func load() async {
         isLoading = true
-        let users = await userRepository.loadUsers()
-        let alumnos = users.filter { $0.role == .alumno }
+        let loadedUsers = await provider.loadUsers()
+        users = loadedUsers.sorted { $0.displayName.localizedStandardCompare($1.displayName) == .orderedAscending }
 
-        var stats: [StudentStats] = []
-        var allTyping: [TypingResult] = []
-        var allReading: [ReadingResult] = []
-
-        for user in alumnos {
-            let typing = await resultsStore.typingResults(for: user.id)
-            let reading = await resultsStore.readingResults(for: user.id)
-            allTyping.append(contentsOf: typing)
-            allReading.append(contentsOf: reading)
-            stats.append(StudentStats(user: user, typing: typing, reading: reading))
+        if selectedUserId == nil {
+            selectedUserId = users.first?.id
         }
 
-        stats.sort { $0.user.displayName.localizedStandardCompare($1.user.displayName) == .orderedAscending }
-        students = stats
-        overall = OverallStats(typing: allTyping, reading: allReading, studentCount: alumnos.count)
+        await reloadSeries()
         isLoading = false
     }
-}
 
-public struct StudentStats: Identifiable, Equatable {
-    public let id: UUID
-    public let user: User
-    public let typingCount: Int
-    public let readingCount: Int
-    public let averageTypingErrors: Double
-    public let averageTypingTime: TimeInterval
-    public let averageReadingTime: TimeInterval
-    public let averageReadingWordTime: TimeInterval
-
-    public init(user: User, typing: [TypingResult], reading: [ReadingResult]) {
-        self.id = user.id
-        self.user = user
-        self.typingCount = typing.count
-        self.readingCount = reading.count
-        self.averageTypingErrors = StudentStats.average(typing.map { Double($0.metrics.errorCount) })
-        self.averageTypingTime = StudentStats.average(typing.map { $0.metrics.totalTime })
-        self.averageReadingTime = StudentStats.average(reading.map { $0.metrics.totalTime })
-        self.averageReadingWordTime = StudentStats.average(reading.map { $0.metrics.averageWordTime })
+    public func selectUser(_ id: UUID?) async {
+        selectedUserId = id
+        await reloadSeries()
     }
 
-    private static func average(_ values: [Double]) -> Double {
-        guard !values.isEmpty else { return 0 }
-        return values.reduce(0, +) / Double(values.count)
-    }
-}
-
-public struct OverallStats: Equatable {
-    public let studentCount: Int
-    public let typingSessions: Int
-    public let readingSessions: Int
-    public let averageTypingErrors: Double
-    public let averageTypingTime: TimeInterval
-    public let averageReadingTime: TimeInterval
-    public let averageReadingWordTime: TimeInterval
-
-    public init(typing: [TypingResult], reading: [ReadingResult], studentCount: Int) {
-        self.studentCount = studentCount
-        self.typingSessions = typing.count
-        self.readingSessions = reading.count
-        self.averageTypingErrors = OverallStats.average(typing.map { Double($0.metrics.errorCount) })
-        self.averageTypingTime = OverallStats.average(typing.map { $0.metrics.totalTime })
-        self.averageReadingTime = OverallStats.average(reading.map { $0.metrics.totalTime })
-        self.averageReadingWordTime = OverallStats.average(reading.map { $0.metrics.averageWordTime })
+    public func reloadSeries() async {
+        guard let id = selectedUserId else {
+            series = nil
+            return
+        }
+        series = await provider.loadSeries(for: id)
     }
 
-    private static func average(_ values: [Double]) -> Double {
-        guard !values.isEmpty else { return 0 }
-        return values.reduce(0, +) / Double(values.count)
+    public var selectedUser: User? {
+        guard let id = selectedUserId else { return nil }
+        return users.first { $0.id == id }
     }
 }
