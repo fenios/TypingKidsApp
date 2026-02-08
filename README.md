@@ -36,9 +36,15 @@ A SwiftUI macOS app for children ages 7–10 to learn typing and reading skills 
     ├── TypingPractice/
     │   ├── Sources/Domain
     │   └── Sources/Presentation
-    └── ReadingPractice/
-        ├── Sources/Domain
-        └── Sources/Presentation
+    ├── ReadingPractice/
+    │   ├── Sources/Domain
+    │   └── Sources/Presentation
+    ├── LanguageProcessing/
+    │   ├── Sources
+    │   └── Tests
+    └── SpeechRecognition/
+        ├── Sources
+        └── Tests
 ```
 
 ## Modules and Boundaries
@@ -47,12 +53,15 @@ A SwiftUI macOS app for children ages 7–10 to learn typing and reading skills 
 - **Stories**: Local JSON repository of Spanish children stories.
 - **AccessibilitySettings**: Font scale + high contrast settings, persisted locally.
 - **TypingPractice**: Typing flow, reaction time, total time, error counting.
-- **ReadingPractice**: Reading flow with per-word timing.
+- **ReadingPractice**: Reading flow with per-word timing and speech-based word matching.
+- **LanguageProcessing**: Text normalization, tokenization, and Spanish syllable counting.
+- **SpeechRecognition**: On-device speech recognition abstraction + mock.
 - **App**: Composition root + SwiftUI tabs.
 
 ## Feature Functionality
 - Typing practice: children copy story text, with reaction time, total time, and error metrics.
-- Reading practice: timed per-word reading without typing input.
+- Reading practice: timed per-word reading with automatic speech matching.
+- Reading algorithms: sequential story reading or syllable-filtered words.
 - Accessibility: adjustable font size and high contrast mode.
 - Local stories: bundled Spanish stories for ages 7–10.
 - Local persistence: stores settings and session results on disk.
@@ -87,3 +96,4 @@ Run tests from Xcode or via `xcodebuild`.
 ## Notes
 - SwiftUI only (AppKit not used).
 - Modular design for testability and scalability.
+- Speech recognition uses on-device processing (Speech framework).

@@ -28,7 +28,11 @@
 	<string>Copyright ©. All rights reserved.</string>
 	<key>NSMainStoryboardFile</key>
 	<string>Main</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Necesitamos usar el micrófono para escuchar la lectura.</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Necesitamos acceder al reconocimiento de voz para validar la lectura.</string>
 </dict>
 </plist>

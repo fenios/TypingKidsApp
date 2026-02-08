@@ -7,6 +7,7 @@ final class TypingKidsAppUITests: XCTestCase {
 
     func testTypingFlowShowsResults() {
         let app = XCUIApplication()
+        app.launchEnvironment["USE_SPEECH_MOCK"] = "1"
         app.launch()
 
         app.buttons["Escritura"].click()
@@ -22,6 +23,7 @@ final class TypingKidsAppUITests: XCTestCase {
 
     func testReadingFlowShowsResults() {
         let app = XCUIApplication()
+        app.launchEnvironment["USE_SPEECH_MOCK"] = "1"
         app.launch()
 
         app.buttons["Lectura"].click()

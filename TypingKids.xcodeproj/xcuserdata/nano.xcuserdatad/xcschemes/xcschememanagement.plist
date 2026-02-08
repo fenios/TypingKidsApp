@@ -18,40 +18,54 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
-		<key>Persistence.xcscheme_^#shared#^_</key>
+		<key>LanguageProcessing.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<true/>
 			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
-		<key>ReadingPractice.xcscheme_^#shared#^_</key>
+		<key>Persistence.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<true/>
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
-		<key>Stories.xcscheme_^#shared#^_</key>
+		<key>ReadingPractice.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<true/>
 			<key>orderHint</key>
 			<integer>5</integer>
 		</dict>
-		<key>TypingKidsApp.xcscheme_^#shared#^_</key>
+		<key>SpeechRecognition.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>isShown</key>
+			<true/>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
+		<key>Stories.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<true/>
 			<key>orderHint</key>
 			<integer>7</integer>
 		</dict>
+		<key>TypingKidsApp.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>isShown</key>
+			<true/>
+			<key>orderHint</key>
+			<integer>9</integer>
+		</dict>
 		<key>TypingPractice.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<true/>
 			<key>orderHint</key>
-			<integer>8</integer>
+			<integer>10</integer>
 		</dict>
 	</dict>
 </dict>

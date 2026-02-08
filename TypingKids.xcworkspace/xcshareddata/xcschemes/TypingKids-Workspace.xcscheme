@@ -70,6 +70,34 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "11EBA97EB8CB4F8A18D1311F"
+               BuildableName = "LanguageProcessing.framework"
+               BlueprintName = "LanguageProcessing"
+               ReferencedContainer = "container:TypingKids.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "7219D3E9C10F8A89B6EDA575"
+               BuildableName = "LanguageProcessingTests.xctest"
+               BlueprintName = "LanguageProcessingTests"
+               ReferencedContainer = "container:TypingKids.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "1E46F71931A3864CF4D45CB0"
                BuildableName = "Persistence.framework"
                BlueprintName = "Persistence"
@@ -115,6 +143,34 @@
                BlueprintIdentifier = "47C61A4AC1CB181F24EADE65"
                BuildableName = "ReadingPracticeTests.xctest"
                BlueprintName = "ReadingPracticeTests"
+               ReferencedContainer = "container:TypingKids.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "A7CE5A4B08AE97AC93B560E8"
+               BuildableName = "SpeechRecognition.framework"
+               BlueprintName = "SpeechRecognition"
+               ReferencedContainer = "container:TypingKids.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D67EF17884BF34E58D02454B"
+               BuildableName = "SpeechRecognitionTests.xctest"
+               BlueprintName = "SpeechRecognitionTests"
                ReferencedContainer = "container:TypingKids.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -251,6 +307,17 @@
             parallelizable = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "7219D3E9C10F8A89B6EDA575"
+               BuildableName = "LanguageProcessingTests.xctest"
+               BlueprintName = "LanguageProcessingTests"
+               ReferencedContainer = "container:TypingKids.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "F1EA4B381E53B77E14AA30AF"
                BuildableName = "PersistenceTests.xctest"
                BlueprintName = "PersistenceTests"
@@ -265,6 +332,17 @@
                BlueprintIdentifier = "47C61A4AC1CB181F24EADE65"
                BuildableName = "ReadingPracticeTests.xctest"
                BlueprintName = "ReadingPracticeTests"
+               ReferencedContainer = "container:TypingKids.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D67EF17884BF34E58D02454B"
+               BuildableName = "SpeechRecognitionTests.xctest"
+               BlueprintName = "SpeechRecognitionTests"
                ReferencedContainer = "container:TypingKids.xcodeproj">
             </BuildableReference>
          </TestableReference>

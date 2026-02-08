@@ -7,32 +7,64 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5F386370-DE0A-462E-A75C-7422E80BFB89"
+            uuid = "CE92B5CF-393B-428E-99AC-88F2D795B826"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Modules/TypingPractice/Sources/Presentation/TypingPracticeViewModel.swift"
+            filePath = "Modules/ReadingPractice/Sources/Presentation/ReadingPracticeViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "loadStories()"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
+            landmarkName = "startSession()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C8254242-3A3D-4499-80E2-440885DB40C0"
+            uuid = "60AC396C-CFA3-48A1-A68F-813B370654BB"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Modules/Stories/Sources/Data/StoryRepository.swift"
+            filePath = "Modules/SpeechRecognition/Sources/SystemSpeechRecognizer.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "loadStories()"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "startRecognition(locale:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "09E8B0CD-EBE7-4ED3-9CBD-1C218841E75E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Modules/SpeechRecognition/Sources/SystemSpeechRecognizer.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "requestAuthorization()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8ED95CD7-A914-451A-9695-DB22F896E0C8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Modules/ReadingPractice/Sources/Presentation/ReadingPracticeViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "157"
+            endingLineNumber = "157"
+            landmarkName = "handleTranscription(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

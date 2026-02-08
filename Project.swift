@@ -37,6 +37,53 @@ let project = Project(
             dependencies: [.target(name: "Core")]
         ),
 
+        // Language Processing
+        .target(
+            name: "LanguageProcessing",
+            destinations: .macOS,
+            product: .staticFramework,
+            bundleId: "\(bundlePrefix).languageprocessing",
+            deploymentTargets: deploymentTargets,
+            infoPlist: .default,
+            sources: ["Modules/LanguageProcessing/Sources/**"],
+            resources: [],
+            dependencies: []
+        ),
+        .target(
+            name: "LanguageProcessingTests",
+            destinations: .macOS,
+            product: .unitTests,
+            bundleId: "\(bundlePrefix).languageprocessing.tests",
+            infoPlist: .default,
+            sources: ["Modules/LanguageProcessing/Tests/**"],
+            dependencies: [.target(name: "LanguageProcessing")]
+        ),
+
+        // Speech Recognition
+        .target(
+            name: "SpeechRecognition",
+            destinations: .macOS,
+            product: .staticFramework,
+            bundleId: "\(bundlePrefix).speechrecognition",
+            deploymentTargets: deploymentTargets,
+            infoPlist: .default,
+            sources: ["Modules/SpeechRecognition/Sources/**"],
+            resources: [],
+            dependencies: [
+                .sdk(name: "Speech", type: .framework, status: .required),
+                .sdk(name: "AVFoundation", type: .framework, status: .required)
+            ]
+        ),
+        .target(
+            name: "SpeechRecognitionTests",
+            destinations: .macOS,
+            product: .unitTests,
+            bundleId: "\(bundlePrefix).speechrecognition.tests",
+            infoPlist: .default,
+            sources: ["Modules/SpeechRecognition/Tests/**"],
+            dependencies: [.target(name: "SpeechRecognition")]
+        ),
+
         // Persistence
         .target(
             name: "Persistence",
@@ -145,7 +192,9 @@ let project = Project(
                 .target(name: "Core"),
                 .target(name: "Stories"),
                 .target(name: "Persistence"),
-                .target(name: "AccessibilitySettings")
+                .target(name: "AccessibilitySettings"),
+                .target(name: "LanguageProcessing"),
+                .target(name: "SpeechRecognition")
             ]
         ),
         .target(
@@ -170,7 +219,9 @@ let project = Project(
                 "CFBundleName": "Typing Kids",
                 "CFBundleShortVersionString": "1.0.0",
                 "CFBundleVersion": "1",
-                "LSMinimumSystemVersion": "14.0"
+                "LSMinimumSystemVersion": "14.0",
+                "NSSpeechRecognitionUsageDescription": "Necesitamos acceder al reconocimiento de voz para validar la lectura.",
+                "NSMicrophoneUsageDescription": "Necesitamos usar el micrófono para escuchar la lectura."
             ]),
             sources: ["App/Sources/**"],
             resources: [],
@@ -180,7 +231,9 @@ let project = Project(
                 .target(name: "TypingPractice"),
                 .target(name: "ReadingPractice"),
                 .target(name: "AccessibilitySettings"),
-                .target(name: "Persistence")
+                .target(name: "Persistence"),
+                .target(name: "SpeechRecognition"),
+                .target(name: "LanguageProcessing")
             ]
         ),
         .target(

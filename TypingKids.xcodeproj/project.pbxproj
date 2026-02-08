@@ -10,6 +10,7 @@
 		02E43C2E8FEF71CA9E346B62 /* AccessibilitySettingsRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1593F4A0EAB2BCB4CA173CC3 /* AccessibilitySettingsRepositoryTests.swift */; };
 		035A6BC5185713910307FADA /* ReadingPracticeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AC595D3B00E0B99ABFFE44 /* ReadingPracticeViewModelTests.swift */; };
 		05E9ABAC1BFFACCA8DEB3F75 /* Persistence.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCB76429CA14475D2517C9A7 /* Persistence.framework */; };
+		06C4B0372F380902550DADE0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3BCFE52EC57F74E2EB426E8 /* AVFoundation.framework */; };
 		0B5CA4EC1C54417A7898ED52 /* Core.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = E29953FFA4F47A19BB650A64 /* Core.framework */; };
 		0CE5972EE185A70EF96ACD53 /* AccessibilitySettings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7328F905EC725E1176F1A334 /* AccessibilitySettings.framework */; };
 		0F32AF65D42DBC81A0CAF069 /* Persistence.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCB76429CA14475D2517C9A7 /* Persistence.framework */; };
@@ -17,21 +18,29 @@
 		11C0AFC64D20A51F859FA8AF /* Stories.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 236C5B4A07BDCF26C5C85007 /* Stories.framework */; };
 		1321CEBF51E3CD53E0CC544E /* Persistence.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCB76429CA14475D2517C9A7 /* Persistence.framework */; };
 		141F896F97F58A40EC1B6206 /* TuistBundle+Stories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E86B8723C2DFB1B05CEB55 /* TuistBundle+Stories.swift */; };
+		153A5EACBECABFC0D83FD971 /* Speech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85875BE55DF8371A45EA9EF1 /* Speech.framework */; };
 		1798A3567BA20969EB4B77FD /* TypingPractice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2793D722B195BAAD18346E9 /* TypingPractice.framework */; };
 		197CA303F9FEDAE34F243164 /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6F6E2130403A39B9575B42 /* Clock.swift */; };
+		1A0D6954A5697CC50CD3ED1B /* SystemSpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DC523C9B4A427E55415497 /* SystemSpeechRecognizer.swift */; };
+		1A8F29674FDB9118AE1B7F3D /* LanguageProcessing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAE41B682CF525548B1E0E5B /* LanguageProcessing.framework */; };
 		1B7E51F7A9B6773C5EF6B435 /* AccessibilitySettings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7328F905EC725E1176F1A334 /* AccessibilitySettings.framework */; };
+		1D0413201B74570112CDE094 /* Speech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85875BE55DF8371A45EA9EF1 /* Speech.framework */; };
 		1EB84719D063A20B98339BA2 /* KeyValueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE2BCABB1E6267654286CA7 /* KeyValueStore.swift */; };
 		1F2D86F14C092D1441D89CBF /* Stories.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 236C5B4A07BDCF26C5C85007 /* Stories.framework */; };
 		20B6F912603CF7ADECECA52A /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E29953FFA4F47A19BB650A64 /* Core.framework */; };
 		257AB4B32A8BF44FECBCD34D /* TypingEvaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EA0BFE176A0599F1A2DF67 /* TypingEvaluator.swift */; };
+		25BC700EE08395A57F366C42 /* SpeechRecognition.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC84E0D83811E5096CF79A20 /* SpeechRecognition.framework */; };
 		278906543E8053DE10025CAD /* ReadingPractice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98D7C6836491D477D15949C3 /* ReadingPractice.framework */; };
 		287F3F363A9CA3568BA26957 /* Stories.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 236C5B4A07BDCF26C5C85007 /* Stories.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2985FD7A22021EBDB160DDA8 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E29953FFA4F47A19BB650A64 /* Core.framework */; };
+		2C89D43AC26864955BBE692F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3BCFE52EC57F74E2EB426E8 /* AVFoundation.framework */; };
 		33743FF8BCF35DA4044E360F /* ReadingPracticeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC38BB8CA0684314DAF36A2C /* ReadingPracticeViewModel.swift */; };
 		34D461001BB65C4B325DCA97 /* TypingKidsAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B153A3A10CA050525BB1C6A /* TypingKidsAppUITests.swift */; };
+		36DF78A91FC3EEA659B7A21C /* SpeechRecognition.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = FC84E0D83811E5096CF79A20 /* SpeechRecognition.framework */; };
 		398EAF2349A70D2ACD0478DB /* AccessibilitySettings.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 7328F905EC725E1176F1A334 /* AccessibilitySettings.framework */; };
 		42FA3E903C3F0ED5454BD1FB /* AccessibilitySettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28585AC1AF5732F13E86CD3D /* AccessibilitySettingsView.swift */; };
 		499C7E40698A535AAD0D1346 /* Persistence.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCB76429CA14475D2517C9A7 /* Persistence.framework */; };
+		4A79D066C64D48C22FFA3A65 /* SpeechRecognizerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4927000E81A98CE862712CA1 /* SpeechRecognizerMock.swift */; };
 		4AE7ACBC04CED173295C1B26 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E29953FFA4F47A19BB650A64 /* Core.framework */; };
 		4CA1B1CB7D7540442B2FEF42 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E29953FFA4F47A19BB650A64 /* Core.framework */; };
 		52AB801E8556217E79149CC1 /* TuistBundle+StoriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0389413C6AD1E76FFA17437 /* TuistBundle+StoriesTests.swift */; };
@@ -40,46 +49,70 @@
 		5AD69C5DAC762F97FD47E902 /* ReadingPractice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98D7C6836491D477D15949C3 /* ReadingPractice.framework */; };
 		5C1AC27B4E5BA99294FA2159 /* TypingPractice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2793D722B195BAAD18346E9 /* TypingPractice.framework */; };
 		5EE416F865FAF4BAE8C1452B /* TypingPracticeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680FED9EF3DD0B4A65360595 /* TypingPracticeViewModelTests.swift */; };
+		65A6219414152E186C576FB5 /* SpeechRecognizerMockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAAB21FD7559B8948D2F78C /* SpeechRecognizerMockTests.swift */; };
 		692637725F376EFB6DDA8CAB /* SpanishISOKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F81A636112B7356479AD2A /* SpanishISOKeyboard.swift */; };
 		6962103B80563B5ED0219668 /* TypingEvaluatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F9149E72A0AC068356AEC7 /* TypingEvaluatorTests.swift */; };
+		6F6EFDFE38F2C4BE8BEB6432 /* LanguageProcessing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAE41B682CF525548B1E0E5B /* LanguageProcessing.framework */; };
 		7231F9DF28BD7DADCCD9BF73 /* Stories.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 236C5B4A07BDCF26C5C85007 /* Stories.framework */; };
+		749DD6AC9845C67D3A29374B /* WordTokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50759913507A58FB140F510A /* WordTokenizer.swift */; };
 		7FA8D02AFB8C141F46C6BFCA /* StoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316E32CC0C181588E4D55109 /* StoryRepository.swift */; };
 		82AEC81EA7AC9389DE28C2BC /* SpanishISOKeyboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71320CFCFE3D50301F8A65FB /* SpanishISOKeyboardTests.swift */; };
 		863F3F908924DBED00BCCF25 /* StoryRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8FB0CF9FFBCE2209761525 /* StoryRepositoryTests.swift */; };
+		8B468B8B3499A0522BC5AD68 /* LanguageProcessing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAE41B682CF525548B1E0E5B /* LanguageProcessing.framework */; };
 		8B73A458EB37A2BF6459F077 /* TypingKidsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD99A9D5729D4A90098D91F8 /* TypingKidsApp.swift */; };
+		8B97697E9515CB0154F892DF /* SpanishSyllableCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BBC76502F2704A3C791CEB /* SpanishSyllableCounter.swift */; };
+		8BF1807DF9DC0FDEBFBBE88D /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D6CA79CC749B58BFA3F66F /* SpeechRecognizer.swift */; };
 		8DF0BDC2286ACC3D2153F5EC /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E541E6B1725BBAFD1A7431E /* Story.swift */; };
+		8E09B6B79C27D45ED792E4F7 /* Speech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85875BE55DF8371A45EA9EF1 /* Speech.framework */; };
 		91EF7E74F8567AB239F562BF /* Stories.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 236C5B4A07BDCF26C5C85007 /* Stories.framework */; };
 		95340B21DFB6B6960B790260 /* TypingPracticeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9148D574D35D6FC8269B2F28 /* TypingPracticeViewModel.swift */; };
 		9D1DD1A66928FAEF5EC4BFE3 /* AccessibilitySettings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7328F905EC725E1176F1A334 /* AccessibilitySettings.framework */; };
+		9F5FB0AB82F6DA67D4E778F8 /* SpeechRecognition.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC84E0D83811E5096CF79A20 /* SpeechRecognition.framework */; };
 		A7AC43B76475B9A477CC5D50 /* Persistence.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = DCB76429CA14475D2517C9A7 /* Persistence.framework */; };
+		A90332CAE791A92E3786293D /* SpanishSyllableCounterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C3F4C8BDCC039EC224CB3 /* SpanishSyllableCounterTests.swift */; };
 		A967C37E75771302E1B5AEA6 /* Persistence.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCB76429CA14475D2517C9A7 /* Persistence.framework */; };
 		B05362A22FBD037470274EB1 /* AccessibilitySettings.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 7328F905EC725E1176F1A334 /* AccessibilitySettings.framework */; };
+		B08FB0E5AFA121ED5CD14C6D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3BCFE52EC57F74E2EB426E8 /* AVFoundation.framework */; };
 		B603C3097D379B8E3AD3B923 /* Core.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = E29953FFA4F47A19BB650A64 /* Core.framework */; };
 		B6916B8E9A1211E3DB77B772 /* TypingPracticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F97C8EC9A90F5E1BDC91BA1 /* TypingPracticeView.swift */; };
 		B82CAD43B196DA9CC617F48B /* Stories.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 236C5B4A07BDCF26C5C85007 /* Stories.framework */; };
 		B8A23A17D763E69A406AF2C7 /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A8937D6A9D519705023857 /* Metrics.swift */; };
 		BC779A33D337F5DD9B610066 /* AccessibilitySettings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7328F905EC725E1176F1A334 /* AccessibilitySettings.framework */; };
+		C3FF51285C6B66BD26A3E30B /* LanguageProcessing.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = EAE41B682CF525548B1E0E5B /* LanguageProcessing.framework */; };
 		C56D4A6BC4C3E964FBA404CB /* stories.json in Resources */ = {isa = PBXBuildFile; fileRef = 863DEA2DE5694DC76D8C7914 /* stories.json */; };
 		CC3C9AFD9434E0C254EACEDA /* Persistence.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = DCB76429CA14475D2517C9A7 /* Persistence.framework */; };
 		CF719FD317DA45F52126D62C /* ReadingModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6DA984848D582A616DB739 /* ReadingModels.swift */; };
 		D23AADC379DB8BE9D862CD22 /* AccessibilitySettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B56A63AFD43F7850891F39F /* AccessibilitySettingsViewModel.swift */; };
+		D5CD47B012AF91AA877B51DB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3BCFE52EC57F74E2EB426E8 /* AVFoundation.framework */; };
 		D95ABBBA76032355EBE43B8F /* ReadingPracticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F53D8A5B9FB9EBA778AD882 /* ReadingPracticeView.swift */; };
 		DE94EF0428A68234F9E42469 /* Persistence.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = DCB76429CA14475D2517C9A7 /* Persistence.framework */; };
 		DE9C2118B726E825096B39CD /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2002CE2CDD54AA7F6BED32E2 /* AppDependencies.swift */; };
 		E256B193DD2388F21A09A27D /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E29953FFA4F47A19BB650A64 /* Core.framework */; };
 		E5AA8A1D614BC83EBDC19632 /* AppDependenciesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CB4C90E0767652ADE70E4B /* AppDependenciesTests.swift */; };
 		E6178394A26F368BE9227E08 /* stories.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DFE901C3E9C13B3CCAB923D /* stories.json */; };
+		E7114745A5CDDE57CA4C5F85 /* Speech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85875BE55DF8371A45EA9EF1 /* Speech.framework */; };
 		E75162A12A14D81723D0975A /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E29953FFA4F47A19BB650A64 /* Core.framework */; };
 		E7BCA3F7465B40806A8CCD9C /* FileKeyValueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AE52797D0AD6011B5FC0CE /* FileKeyValueStore.swift */; };
+		E8BA3ECAAD9C732555E543ED /* TextNormalizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8972F4C536E477DF3E697F /* TextNormalizer.swift */; };
+		EE3E40A8850E19EEF6AB9C89 /* TextNormalizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8CD7C8D9B2A9EBB816C97F /* TextNormalizerTests.swift */; };
+		F3F625FEFB242CC9186C3C5E /* SpeechRecognition.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC84E0D83811E5096CF79A20 /* SpeechRecognition.framework */; };
 		F46ADFBE841A12ECDE460D63 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E29953FFA4F47A19BB650A64 /* Core.framework */; };
 		F485442BAC5180756BF3E6FF /* AccessibilitySettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE1C7D3DAF1EBA1CC66D6AF /* AccessibilitySettings.swift */; };
 		F526B80BCC4091108268E104 /* Stories.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 236C5B4A07BDCF26C5C85007 /* Stories.framework */; };
 		F7366C2AE27AF94D64C6D0F2 /* Core.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = E29953FFA4F47A19BB650A64 /* Core.framework */; };
 		F8B92293FA82E451D58B88CF /* Core.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = E29953FFA4F47A19BB650A64 /* Core.framework */; };
 		FB15ECF84594E871D4FFB8CA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C7EAF0E5A63433BFEB0842 /* ContentView.swift */; };
+		FD9E170F81597BE1352D5DFB /* WordTokenizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE6D4BA8C4C0DDEB535AB65 /* WordTokenizerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		03D3ABFB8E970360B3336076 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3BE8A948B1F776D97C85A7F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A7CE5A4B08AE97AC93B560E8;
+			remoteInfo = SpeechRecognition;
+		};
 		050946F3219A244982450CF4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C3BE8A948B1F776D97C85A7F /* Project object */;
@@ -121,6 +154,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 324E5CBECAF20B3D4AD132AD;
 			remoteInfo = ReadingPractice;
+		};
+		186AB8C8B22058F98E0D44CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3BE8A948B1F776D97C85A7F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 11EBA97EB8CB4F8A18D1311F;
+			remoteInfo = LanguageProcessing;
 		};
 		2932A285C7CAF7F22EFA949E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -213,6 +253,13 @@
 			remoteGlobalIDString = 1E46F71931A3864CF4D45CB0;
 			remoteInfo = Persistence;
 		};
+		A31C35A7B16A4848588C1DF8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3BE8A948B1F776D97C85A7F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 11EBA97EB8CB4F8A18D1311F;
+			remoteInfo = LanguageProcessing;
+		};
 		A4437CF19FD92161F877208E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C3BE8A948B1F776D97C85A7F /* Project object */;
@@ -248,6 +295,13 @@
 			remoteGlobalIDString = 324E5CBECAF20B3D4AD132AD;
 			remoteInfo = ReadingPractice;
 		};
+		D0D7F8D50FE8FE71CE168C52 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3BE8A948B1F776D97C85A7F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A7CE5A4B08AE97AC93B560E8;
+			remoteInfo = SpeechRecognition;
+		};
 		D7AE2940FBAD12440A9DC942 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C3BE8A948B1F776D97C85A7F /* Project object */;
@@ -261,6 +315,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 638E050492B530F89211A9B3;
 			remoteInfo = TypingPractice;
+		};
+		E91C53815C9AE991791D48F0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3BE8A948B1F776D97C85A7F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 11EBA97EB8CB4F8A18D1311F;
+			remoteInfo = LanguageProcessing;
+		};
+		FCD1CF939E0CEB1F1D6ACEA3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3BE8A948B1F776D97C85A7F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A7CE5A4B08AE97AC93B560E8;
+			remoteInfo = SpeechRecognition;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -276,6 +344,16 @@
 			runOnlyForDeploymentPostprocessing = 1;
 		};
 		3AB3D98D726E445E7FA016EE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47A052C735940A3E2839BCC8 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
@@ -356,6 +434,26 @@
 			name = Dependencies;
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		94B83D1CAE795513B912693E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A923465943B2767EFEBD4DC /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9C810880649021591EB20D7C /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -373,7 +471,9 @@
 			files = (
 				B05362A22FBD037470274EB1 /* AccessibilitySettings.framework in Dependencies */,
 				F7366C2AE27AF94D64C6D0F2 /* Core.framework in Dependencies */,
+				C3FF51285C6B66BD26A3E30B /* LanguageProcessing.framework in Dependencies */,
 				DE94EF0428A68234F9E42469 /* Persistence.framework in Dependencies */,
+				36DF78A91FC3EEA659B7A21C /* SpeechRecognition.framework in Dependencies */,
 				7231F9DF28BD7DADCCD9BF73 /* Stories.framework in Dependencies */,
 			);
 			name = Dependencies;
@@ -386,6 +486,16 @@
 			dstSubfolderSpec = 10;
 			files = (
 				287F3F363A9CA3568BA26957 /* Stories.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0D7BC5CEF5F6A24E8400F0D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -478,6 +588,7 @@
 /* Begin PBXFileReference section */
 		0484688B8CE012BFCCA1F0B5 /* PersistenceTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "PersistenceTests-Info.plist"; sourceTree = "<group>"; };
 		060B80F3D53BFBC8719E86C8 /* AccessibilitySettingsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "AccessibilitySettingsTests-Info.plist"; sourceTree = "<group>"; };
+		0A3AA8DD47E06E1AC4E8BD3E /* LanguageProcessingTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "LanguageProcessingTests-Info.plist"; sourceTree = "<group>"; };
 		0D4164D4E4676B08048D73C7 /* TypingPracticeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TypingPracticeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1593F4A0EAB2BCB4CA173CC3 /* AccessibilitySettingsRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilitySettingsRepositoryTests.swift; sourceTree = "<group>"; };
 		1A764BA82A5BE9208313FB6F /* StoriesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StoriesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -495,13 +606,20 @@
 		36226CFE1E2DE61772ED7114 /* Core-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Core-Info.plist"; sourceTree = "<group>"; };
 		38F81A636112B7356479AD2A /* SpanishISOKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpanishISOKeyboard.swift; sourceTree = "<group>"; };
 		39F9149E72A0AC068356AEC7 /* TypingEvaluatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypingEvaluatorTests.swift; sourceTree = "<group>"; };
+		3A5C3F4C8BDCC039EC224CB3 /* SpanishSyllableCounterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpanishSyllableCounterTests.swift; sourceTree = "<group>"; };
+		3AAAB21FD7559B8948D2F78C /* SpeechRecognizerMockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizerMockTests.swift; sourceTree = "<group>"; };
 		3B56A63AFD43F7850891F39F /* AccessibilitySettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilitySettingsViewModel.swift; sourceTree = "<group>"; };
 		3E541E6B1725BBAFD1A7431E /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
+		48913E319A6142B5965B0D8F /* LanguageProcessingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LanguageProcessingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4927000E81A98CE862712CA1 /* SpeechRecognizerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizerMock.swift; sourceTree = "<group>"; };
 		4D8D9D4F259C360577680E62 /* TypingKidsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TypingKidsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DFE901C3E9C13B3CCAB923D /* stories.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = stories.json; sourceTree = "<group>"; };
 		4F97C8EC9A90F5E1BDC91BA1 /* TypingPracticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypingPracticeView.swift; sourceTree = "<group>"; };
+		50759913507A58FB140F510A /* WordTokenizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordTokenizer.swift; sourceTree = "<group>"; };
 		5136A3CBEDD3F45235DD07D0 /* InMemoryKeyValueStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryKeyValueStoreTests.swift; sourceTree = "<group>"; };
 		54068ACFADABB984D4CECDBF /* TypingKidsAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TypingKidsAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		59D6CA79CC749B58BFA3F66F /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
+		5A8972F4C536E477DF3E697F /* TextNormalizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextNormalizer.swift; sourceTree = "<group>"; };
 		5B1ADC2593406B87161385BD /* Stories-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Stories-Info.plist"; sourceTree = "<group>"; };
 		5C6F6E2130403A39B9575B42 /* Clock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
 		613415261A2057854F54E707 /* CoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -516,22 +634,33 @@
 		750690E55BF2695B85EE6BAF /* PersistenceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PersistenceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		750B8D08E5E363D66000C1F9 /* TypingKidsAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "TypingKidsAppTests-Info.plist"; sourceTree = "<group>"; };
 		77C7EAF0E5A63433BFEB0842 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		787E0675B7F647C99B82F8A5 /* SpeechRecognition-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "SpeechRecognition-Info.plist"; sourceTree = "<group>"; };
 		7B153A3A10CA050525BB1C6A /* TypingKidsAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypingKidsAppUITests.swift; sourceTree = "<group>"; };
+		85875BE55DF8371A45EA9EF1 /* Speech.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Speech.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/Speech.framework; sourceTree = DEVELOPER_DIR; };
 		85B5BB029F5485EB53D84EA7 /* ReadingPracticeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "ReadingPracticeTests-Info.plist"; sourceTree = "<group>"; };
 		85E363E0782D22D40162056F /* ReadingPracticeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReadingPracticeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		863DEA2DE5694DC76D8C7914 /* stories.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = stories.json; sourceTree = "<group>"; };
 		9148D574D35D6FC8269B2F28 /* TypingPracticeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypingPracticeViewModel.swift; sourceTree = "<group>"; };
+		97BBC76502F2704A3C791CEB /* SpanishSyllableCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpanishSyllableCounter.swift; sourceTree = "<group>"; };
 		98D7C6836491D477D15949C3 /* ReadingPractice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReadingPractice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4AC595D3B00E0B99ABFFE44 /* ReadingPracticeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingPracticeViewModelTests.swift; sourceTree = "<group>"; };
 		A5615F611258D6D3163842C3 /* TypingModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypingModels.swift; sourceTree = "<group>"; };
+		B2DC523C9B4A427E55415497 /* SystemSpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemSpeechRecognizer.swift; sourceTree = "<group>"; };
+		B3BCFE52EC57F74E2EB426E8 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		BB272CAFA4932B3A0A36C0CA /* SpeechRecognitionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpeechRecognitionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC38BB8CA0684314DAF36A2C /* ReadingPracticeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingPracticeViewModel.swift; sourceTree = "<group>"; };
+		CCE6D4BA8C4C0DDEB535AB65 /* WordTokenizerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordTokenizerTests.swift; sourceTree = "<group>"; };
 		D2793D722B195BAAD18346E9 /* TypingPractice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TypingPractice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCB76429CA14475D2517C9A7 /* Persistence.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Persistence.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD99A9D5729D4A90098D91F8 /* TypingKidsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypingKidsApp.swift; sourceTree = "<group>"; };
 		DDB6BEC519F87219985D43C9 /* ReadingPractice-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "ReadingPractice-Info.plist"; sourceTree = "<group>"; };
 		E29953FFA4F47A19BB650A64 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3A8937D6A9D519705023857 /* Metrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metrics.swift; sourceTree = "<group>"; };
+		E64A8848FAB295DEAE4B7D58 /* LanguageProcessing-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "LanguageProcessing-Info.plist"; sourceTree = "<group>"; };
 		E8EA0BFE176A0599F1A2DF67 /* TypingEvaluator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypingEvaluator.swift; sourceTree = "<group>"; };
+		EA8CD7C8D9B2A9EBB816C97F /* TextNormalizerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextNormalizerTests.swift; sourceTree = "<group>"; };
+		EA91B016E16AB177E5584595 /* SpeechRecognitionTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "SpeechRecognitionTests-Info.plist"; sourceTree = "<group>"; };
+		EAE41B682CF525548B1E0E5B /* LanguageProcessing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LanguageProcessing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE8FB0CF9FFBCE2209761525 /* StoryRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryRepositoryTests.swift; sourceTree = "<group>"; };
 		F0389413C6AD1E76FFA17437 /* TuistBundle+StoriesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistBundle+StoriesTests.swift"; sourceTree = "<group>"; };
 		F1D40CFB54A715FCDCDA2B96 /* TypingPractice-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "TypingPractice-Info.plist"; sourceTree = "<group>"; };
@@ -539,6 +668,7 @@
 		F3AE52797D0AD6011B5FC0CE /* FileKeyValueStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileKeyValueStore.swift; sourceTree = "<group>"; };
 		F5222FF86F42A07D7A9EBAE6 /* CoreTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "CoreTests-Info.plist"; sourceTree = "<group>"; };
 		FBAE1095457672585BB504E6 /* TypingKidsAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TypingKidsAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC84E0D83811E5096CF79A20 /* SpeechRecognition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SpeechRecognition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -549,14 +679,35 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		01A1B2E32C7727E3B2283C1B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04939E62E2AF9C4839993023 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C89D43AC26864955BBE692F /* AVFoundation.framework in Frameworks */,
+				8E09B6B79C27D45ED792E4F7 /* Speech.framework in Frameworks */,
+				9F5FB0AB82F6DA67D4E778F8 /* SpeechRecognition.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0F6F0DB32BD42ACFD4D0FD89 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5CD47B012AF91AA877B51DB /* AVFoundation.framework in Frameworks */,
+				1D0413201B74570112CDE094 /* Speech.framework in Frameworks */,
 				9D1DD1A66928FAEF5EC4BFE3 /* AccessibilitySettings.framework in Frameworks */,
 				2985FD7A22021EBDB160DDA8 /* Core.framework in Frameworks */,
+				1A8F29674FDB9118AE1B7F3D /* LanguageProcessing.framework in Frameworks */,
 				05E9ABAC1BFFACCA8DEB3F75 /* Persistence.framework in Frameworks */,
 				5AD69C5DAC762F97FD47E902 /* ReadingPractice.framework in Frameworks */,
+				F3F625FEFB242CC9186C3C5E /* SpeechRecognition.framework in Frameworks */,
 				B82CAD43B196DA9CC617F48B /* Stories.framework in Frameworks */,
 				5C1AC27B4E5BA99294FA2159 /* TypingPractice.framework in Frameworks */,
 			);
@@ -592,10 +743,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B08FB0E5AFA121ED5CD14C6D /* AVFoundation.framework in Frameworks */,
+				E7114745A5CDDE57CA4C5F85 /* Speech.framework in Frameworks */,
 				1B7E51F7A9B6773C5EF6B435 /* AccessibilitySettings.framework in Frameworks */,
 				F46ADFBE841A12ECDE460D63 /* Core.framework in Frameworks */,
+				6F6EFDFE38F2C4BE8BEB6432 /* LanguageProcessing.framework in Frameworks */,
 				A967C37E75771302E1B5AEA6 /* Persistence.framework in Frameworks */,
 				278906543E8053DE10025CAD /* ReadingPractice.framework in Frameworks */,
+				25BC700EE08395A57F366C42 /* SpeechRecognition.framework in Frameworks */,
 				11C0AFC64D20A51F859FA8AF /* Stories.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -630,6 +785,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C66F70D118130758E769BEA7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06C4B0372F380902550DADE0 /* AVFoundation.framework in Frameworks */,
+				153A5EACBECABFC0D83FD971 /* Speech.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C9BB154A603116ECF62A7A95 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -639,6 +803,14 @@
 				1321CEBF51E3CD53E0CC544E /* Persistence.framework in Frameworks */,
 				1F2D86F14C092D1441D89CBF /* Stories.framework in Frameworks */,
 				1798A3567BA20969EB4B77FD /* TypingPractice.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CBCBED3D1BF769D70944CC41 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B468B8B3499A0522BC5AD68 /* LanguageProcessing.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -690,6 +862,14 @@
 			path = Domain;
 			sourceTree = "<group>";
 		};
+		0CB25B067BAE54D2B82EE6A6 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				3AAAB21FD7559B8948D2F78C /* SpeechRecognizerMockTests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
 		1BC8A0D6B93AB49EC166C67C /* Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -706,10 +886,14 @@
 				060B80F3D53BFBC8719E86C8 /* AccessibilitySettingsTests-Info.plist */,
 				36226CFE1E2DE61772ED7114 /* Core-Info.plist */,
 				F5222FF86F42A07D7A9EBAE6 /* CoreTests-Info.plist */,
+				E64A8848FAB295DEAE4B7D58 /* LanguageProcessing-Info.plist */,
+				0A3AA8DD47E06E1AC4E8BD3E /* LanguageProcessingTests-Info.plist */,
 				72131795B0D3612CB1E60A15 /* Persistence-Info.plist */,
 				0484688B8CE012BFCCA1F0B5 /* PersistenceTests-Info.plist */,
 				DDB6BEC519F87219985D43C9 /* ReadingPractice-Info.plist */,
 				85B5BB029F5485EB53D84EA7 /* ReadingPracticeTests-Info.plist */,
+				787E0675B7F647C99B82F8A5 /* SpeechRecognition-Info.plist */,
+				EA91B016E16AB177E5584595 /* SpeechRecognitionTests-Info.plist */,
 				5B1ADC2593406B87161385BD /* Stories-Info.plist */,
 				622D80BBCFC930E7B1DB1BF1 /* StoriesTests-Info.plist */,
 				32A9B028E97F9EB7D3C60DF1 /* TypingKidsApp-Info.plist */,
@@ -764,6 +948,15 @@
 			path = ReadingPractice;
 			sourceTree = "<group>";
 		};
+		369DC7108DB7B3650CE45B14 /* SpeechRecognition */ = {
+			isa = PBXGroup;
+			children = (
+				4DA7CD0EB89284CB2C756EBB /* Sources */,
+				0CB25B067BAE54D2B82EE6A6 /* Tests */,
+			);
+			path = SpeechRecognition;
+			sourceTree = "<group>";
+		};
 		36A1B3E0E99CC54FF0B65D9E /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -795,12 +988,24 @@
 			children = (
 				3A908928C3710C3F5FB1B92D /* AccessibilitySettings */,
 				E247F9DB605C167970E6360D /* Core */,
+				80F80C91EDE2CDAE491781D3 /* LanguageProcessing */,
 				E73C69850D784DDD25E5D3C6 /* Persistence */,
 				2EFD26E9D0615F01D54126CE /* ReadingPractice */,
+				369DC7108DB7B3650CE45B14 /* SpeechRecognition */,
 				5337E318A65DFE794DC921F9 /* Stories */,
 				66A622F3AC6BADB989F8DC09 /* TypingPractice */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		4DA7CD0EB89284CB2C756EBB /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				59D6CA79CC749B58BFA3F66F /* SpeechRecognizer.swift */,
+				4927000E81A98CE862712CA1 /* SpeechRecognizerMock.swift */,
+				B2DC523C9B4A427E55415497 /* SystemSpeechRecognizer.swift */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		5337E318A65DFE794DC921F9 /* Stories */ = {
@@ -820,6 +1025,25 @@
 				D0AE222A589EA3A47ACB3A5C /* Tests */,
 			);
 			path = TypingPractice;
+			sourceTree = "<group>";
+		};
+		6AB23717E44AEBD76A47A5C6 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				3A5C3F4C8BDCC039EC224CB3 /* SpanishSyllableCounterTests.swift */,
+				EA8CD7C8D9B2A9EBB816C97F /* TextNormalizerTests.swift */,
+				CCE6D4BA8C4C0DDEB535AB65 /* WordTokenizerTests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		6B352659E05F46D48FD0326F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B3BCFE52EC57F74E2EB426E8 /* AVFoundation.framework */,
+				85875BE55DF8371A45EA9EF1 /* Speech.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		6C257736D513913218E33253 /* Data */ = {
@@ -856,6 +1080,15 @@
 				3B56A63AFD43F7850891F39F /* AccessibilitySettingsViewModel.swift */,
 			);
 			path = Presentation;
+			sourceTree = "<group>";
+		};
+		80F80C91EDE2CDAE491781D3 /* LanguageProcessing */ = {
+			isa = PBXGroup;
+			children = (
+				DE5948F30DCD829D092721C1 /* Sources */,
+				6AB23717E44AEBD76A47A5C6 /* Tests */,
+			);
+			path = LanguageProcessing;
 			sourceTree = "<group>";
 		};
 		84E2A4B114013C5E44D52356 /* Tests */ = {
@@ -897,10 +1130,14 @@
 				F2B694EE26926D2EC9DEBE63 /* AccessibilitySettingsTests.xctest */,
 				E29953FFA4F47A19BB650A64 /* Core.framework */,
 				613415261A2057854F54E707 /* CoreTests.xctest */,
+				EAE41B682CF525548B1E0E5B /* LanguageProcessing.framework */,
+				48913E319A6142B5965B0D8F /* LanguageProcessingTests.xctest */,
 				DCB76429CA14475D2517C9A7 /* Persistence.framework */,
 				750690E55BF2695B85EE6BAF /* PersistenceTests.xctest */,
 				98D7C6836491D477D15949C3 /* ReadingPractice.framework */,
 				85E363E0782D22D40162056F /* ReadingPracticeTests.xctest */,
+				FC84E0D83811E5096CF79A20 /* SpeechRecognition.framework */,
+				BB272CAFA4932B3A0A36C0CA /* SpeechRecognitionTests.xctest */,
 				236C5B4A07BDCF26C5C85007 /* Stories.framework */,
 				1A764BA82A5BE9208313FB6F /* StoriesTests.xctest */,
 				4D8D9D4F259C360577680E62 /* TypingKidsApp.app */,
@@ -1008,6 +1245,16 @@
 			path = Domain;
 			sourceTree = "<group>";
 		};
+		DE5948F30DCD829D092721C1 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				97BBC76502F2704A3C791CEB /* SpanishSyllableCounter.swift */,
+				5A8972F4C536E477DF3E697F /* TextNormalizer.swift */,
+				50759913507A58FB140F510A /* WordTokenizer.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
 		DEFBC966A2F9FCED185A51E8 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -1068,12 +1315,33 @@
 			children = (
 				9D5C28F5EBC509379ADCF1F6 /* Products */,
 				75092027127E6DA1B21D5F6B /* Project */,
+				6B352659E05F46D48FD0326F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		11EBA97EB8CB4F8A18D1311F /* LanguageProcessing */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0AC42F105A2E07C8DCF60C8E /* Build configuration list for PBXNativeTarget "LanguageProcessing" */;
+			buildPhases = (
+				7D52CF4DA333A2598C04B0BB /* Sources */,
+				EEBA3D1A7778695D79345B74 /* Resources */,
+				01A1B2E32C7727E3B2283C1B /* Frameworks */,
+				94B83D1CAE795513B912693E /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LanguageProcessing;
+			packageProductDependencies = (
+			);
+			productName = LanguageProcessing;
+			productReference = EAE41B682CF525548B1E0E5B /* LanguageProcessing.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		1575AE5DA2BEF4FEAB59F716 /* TypingKidsAppTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 96845ACB1684D3456D9FA7C6 /* Build configuration list for PBXNativeTarget "TypingKidsAppTests" */;
@@ -1153,7 +1421,9 @@
 			dependencies = (
 				108DED9BA1700909E87283AA /* PBXTargetDependency */,
 				2AD86757B222C13613CC8587 /* PBXTargetDependency */,
+				CDACDBD546DFB39696AE98D7 /* PBXTargetDependency */,
 				F5BEFAEFFBDF5C202438D43F /* PBXTargetDependency */,
+				FB24904D4F1690AD8A757820 /* PBXTargetDependency */,
 				3823E6E46981A1B137D29929 /* PBXTargetDependency */,
 			);
 			name = ReadingPractice;
@@ -1251,6 +1521,27 @@
 			productReference = D2793D722B195BAAD18346E9 /* TypingPractice.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		7219D3E9C10F8A89B6EDA575 /* LanguageProcessingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ABE2DDD4972360C50E37E97C /* Build configuration list for PBXNativeTarget "LanguageProcessingTests" */;
+			buildPhases = (
+				AEF2E309F6405F22C4C3A828 /* Sources */,
+				B550E76A3E7BD9A8C0BE0826 /* Resources */,
+				CBCBED3D1BF769D70944CC41 /* Frameworks */,
+				47A052C735940A3E2839BCC8 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EB726CB22E210F39F6D09909 /* PBXTargetDependency */,
+			);
+			name = LanguageProcessingTests;
+			packageProductDependencies = (
+			);
+			productName = LanguageProcessingTests;
+			productReference = 48913E319A6142B5965B0D8F /* LanguageProcessingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		8661DF2B6433E23D2E6EF5F1 /* Core */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F85E8B7A8E1BEFC8668A7B5C /* Build configuration list for PBXNativeTarget "Core" */;
@@ -1285,8 +1576,10 @@
 			dependencies = (
 				FCBA53ADC2E87532D0929F3F /* PBXTargetDependency */,
 				968074340B965ABCD4F59221 /* PBXTargetDependency */,
+				967B4A2CE837B1700338DA33 /* PBXTargetDependency */,
 				97B66BDCED6C4EFE7A2C87E6 /* PBXTargetDependency */,
 				1C82A1CD3F722242902A155C /* PBXTargetDependency */,
+				BEC80267FEE45C1FA7F89F57 /* PBXTargetDependency */,
 				2CDBA11252D6C99F6CF5E413 /* PBXTargetDependency */,
 				F5FBA20872ABC77D4708DF6C /* PBXTargetDependency */,
 			);
@@ -1296,6 +1589,26 @@
 			productName = TypingKidsApp;
 			productReference = 4D8D9D4F259C360577680E62 /* TypingKidsApp.app */;
 			productType = "com.apple.product-type.application";
+		};
+		A7CE5A4B08AE97AC93B560E8 /* SpeechRecognition */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F1B4F00CF1C2DD7ADF432870 /* Build configuration list for PBXNativeTarget "SpeechRecognition" */;
+			buildPhases = (
+				99BD70A992C7CA23E0337C0D /* Sources */,
+				DCE6AD494D6823A954C1DF6D /* Resources */,
+				C66F70D118130758E769BEA7 /* Frameworks */,
+				9A923465943B2767EFEBD4DC /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SpeechRecognition;
+			packageProductDependencies = (
+			);
+			productName = SpeechRecognition;
+			productReference = FC84E0D83811E5096CF79A20 /* SpeechRecognition.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 		CCF35E9E815C1A80F16CE9DF /* AccessibilitySettings */ = {
 			isa = PBXNativeTarget;
@@ -1319,6 +1632,27 @@
 			productName = AccessibilitySettings;
 			productReference = 7328F905EC725E1176F1A334 /* AccessibilitySettings.framework */;
 			productType = "com.apple.product-type.framework";
+		};
+		D67EF17884BF34E58D02454B /* SpeechRecognitionTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C927A2321A89F7C2B9033A06 /* Build configuration list for PBXNativeTarget "SpeechRecognitionTests" */;
+			buildPhases = (
+				7A5A6CB0A8E6E5207559F1AC /* Sources */,
+				9084D2804F1AA22419ECEF58 /* Resources */,
+				04939E62E2AF9C4839993023 /* Frameworks */,
+				C0D7BC5CEF5F6A24E8400F0D /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BB7E179B04E6D9F69AA283B0 /* PBXTargetDependency */,
+			);
+			name = SpeechRecognitionTests;
+			packageProductDependencies = (
+			);
+			productName = SpeechRecognitionTests;
+			productReference = BB272CAFA4932B3A0A36C0CA /* SpeechRecognitionTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		E8DF052313ED805F926ED172 /* CoreTests */ = {
 			isa = PBXNativeTarget;
@@ -1439,10 +1773,14 @@
 				4DA28502B7090CF72B354E22 /* AccessibilitySettingsTests */,
 				8661DF2B6433E23D2E6EF5F1 /* Core */,
 				E8DF052313ED805F926ED172 /* CoreTests */,
+				11EBA97EB8CB4F8A18D1311F /* LanguageProcessing */,
+				7219D3E9C10F8A89B6EDA575 /* LanguageProcessingTests */,
 				1E46F71931A3864CF4D45CB0 /* Persistence */,
 				F1EA4B381E53B77E14AA30AF /* PersistenceTests */,
 				324E5CBECAF20B3D4AD132AD /* ReadingPractice */,
 				47C61A4AC1CB181F24EADE65 /* ReadingPracticeTests */,
+				A7CE5A4B08AE97AC93B560E8 /* SpeechRecognition */,
+				D67EF17884BF34E58D02454B /* SpeechRecognitionTests */,
 				FEC2CC1FC06000B4FC2FA81E /* Stories */,
 				EE52730ED1176DD3924A13F3 /* StoriesTests */,
 				8D7C24A3940265F7EAF4BADA /* TypingKidsApp */,
@@ -1511,7 +1849,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9084D2804F1AA22419ECEF58 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A3378C9A0CB6EF35884C4F0F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B550E76A3E7BD9A8C0BE0826 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1530,6 +1882,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6178394A26F368BE9227E08 /* stories.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCE6AD494D6823A954C1DF6D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EEBA3D1A7778695D79345B74 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1610,11 +1976,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7A5A6CB0A8E6E5207559F1AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65A6219414152E186C576FB5 /* SpeechRecognizerMockTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7B1E6B34055D72059A8A1BF4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				82AEC81EA7AC9389DE28C2BC /* SpanishISOKeyboardTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D52CF4DA333A2598C04B0BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B97697E9515CB0154F892DF /* SpanishSyllableCounter.swift in Sources */,
+				E8BA3ECAAD9C732555E543ED /* TextNormalizer.swift in Sources */,
+				749DD6AC9845C67D3A29374B /* WordTokenizer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1646,12 +2030,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		99BD70A992C7CA23E0337C0D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BF1807DF9DC0FDEBFBBE88D /* SpeechRecognizer.swift in Sources */,
+				4A79D066C64D48C22FFA3A65 /* SpeechRecognizerMock.swift in Sources */,
+				1A0D6954A5697CC50CD3ED1B /* SystemSpeechRecognizer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AA1F2DB8C0889936954AC02E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				E7BCA3F7465B40806A8CCD9C /* FileKeyValueStore.swift in Sources */,
 				1EB84719D063A20B98339BA2 /* KeyValueStore.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AEF2E309F6405F22C4C3A828 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A90332CAE791A92E3786293D /* SpanishSyllableCounterTests.swift in Sources */,
+				EE3E40A8850E19EEF6AB9C89 /* TextNormalizerTests.swift in Sources */,
+				FD9E170F81597BE1352D5DFB /* WordTokenizerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1806,6 +2210,12 @@
 			target = 8D7C24A3940265F7EAF4BADA /* TypingKidsApp */;
 			targetProxy = 0951C06C931EF65387D1540C /* PBXContainerItemProxy */;
 		};
+		967B4A2CE837B1700338DA33 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = LanguageProcessing;
+			target = 11EBA97EB8CB4F8A18D1311F /* LanguageProcessing */;
+			targetProxy = A31C35A7B16A4848588C1DF8 /* PBXContainerItemProxy */;
+		};
 		968074340B965ABCD4F59221 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Core;
@@ -1830,11 +2240,35 @@
 			target = 1E46F71931A3864CF4D45CB0 /* Persistence */;
 			targetProxy = 05E51297A65B94C734F99D23 /* PBXContainerItemProxy */;
 		};
+		BB7E179B04E6D9F69AA283B0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SpeechRecognition;
+			target = A7CE5A4B08AE97AC93B560E8 /* SpeechRecognition */;
+			targetProxy = D0D7F8D50FE8FE71CE168C52 /* PBXContainerItemProxy */;
+		};
+		BEC80267FEE45C1FA7F89F57 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SpeechRecognition;
+			target = A7CE5A4B08AE97AC93B560E8 /* SpeechRecognition */;
+			targetProxy = FCD1CF939E0CEB1F1D6ACEA3 /* PBXContainerItemProxy */;
+		};
+		CDACDBD546DFB39696AE98D7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = LanguageProcessing;
+			target = 11EBA97EB8CB4F8A18D1311F /* LanguageProcessing */;
+			targetProxy = 186AB8C8B22058F98E0D44CF /* PBXContainerItemProxy */;
+		};
 		D61E47A490485291FDEE6EC2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Stories;
 			target = FEC2CC1FC06000B4FC2FA81E /* Stories */;
 			targetProxy = 050946F3219A244982450CF4 /* PBXContainerItemProxy */;
+		};
+		EB726CB22E210F39F6D09909 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = LanguageProcessing;
+			target = 11EBA97EB8CB4F8A18D1311F /* LanguageProcessing */;
+			targetProxy = E91C53815C9AE991791D48F0 /* PBXContainerItemProxy */;
 		};
 		ECA86240C15059A46FCFFE0E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1853,6 +2287,12 @@
 			name = TypingPractice;
 			target = 638E050492B530F89211A9B3 /* TypingPractice */;
 			targetProxy = DF3D6ABF64D1774501AD9ADC /* PBXContainerItemProxy */;
+		};
+		FB24904D4F1690AD8A757820 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SpeechRecognition;
+			target = A7CE5A4B08AE97AC93B560E8 /* SpeechRecognition */;
+			targetProxy = 03D3ABFB8E970360B3336076 /* PBXContainerItemProxy */;
 		};
 		FCBA53ADC2E87532D0929F3F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1884,6 +2324,41 @@
 			};
 			name = Release;
 		};
+		02B8E32BC3AA2A56D4790F39 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "Derived/InfoPlists/LanguageProcessing-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.typingkids.languageprocessing;
+				PRODUCT_NAME = LanguageProcessing;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+					"$(inherited)",
+					DEBUG,
+				);
+				SWIFT_COMPILATION_MODE = singlefile;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		0F19C29FB0EA25E01A5E8101 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1896,6 +2371,28 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.typingkids.persistence.tests;
 				PRODUCT_NAME = PersistenceTests;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+					"$(inherited)",
+					DEBUG,
+				);
+				SWIFT_COMPILATION_MODE = singlefile;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		292B9966FC9BC76DC4E0365E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				INFOPLIST_FILE = "Derived/InfoPlists/LanguageProcessingTests-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.typingkids.languageprocessing.tests;
+				PRODUCT_NAME = LanguageProcessingTests;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
 					"$(inherited)",
@@ -1929,6 +2426,37 @@
 			};
 			name = Debug;
 		};
+		420B3647F9770BCE975DD15D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "Derived/InfoPlists/SpeechRecognition-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.typingkids.speechrecognition;
+				PRODUCT_NAME = SpeechRecognition;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		46EC6353212E2E51E2061AD1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1951,6 +2479,77 @@
 			};
 			name = Debug;
 		};
+		4CDBBDAB6DC01CC5BC73F65C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				INFOPLIST_FILE = "Derived/InfoPlists/SpeechRecognitionTests-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.typingkids.speechrecognition.tests;
+				PRODUCT_NAME = SpeechRecognitionTests;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		50AE9424E9969DC151DFC90B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				INFOPLIST_FILE = "Derived/InfoPlists/SpeechRecognitionTests-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.typingkids.speechrecognition.tests;
+				PRODUCT_NAME = SpeechRecognitionTests;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+					"$(inherited)",
+					DEBUG,
+				);
+				SWIFT_COMPILATION_MODE = singlefile;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		50F35547C41D836FA24C924C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "Derived/InfoPlists/LanguageProcessing-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.typingkids.languageprocessing;
+				PRODUCT_NAME = LanguageProcessing;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		5519DC3E899F8C6589E01C51 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1963,6 +2562,24 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.typingkids.typing.tests;
 				PRODUCT_NAME = TypingPracticeTests;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		5A0DF519EF9EDBFA6B0CB3EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				INFOPLIST_FILE = "Derived/InfoPlists/LanguageProcessingTests-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.typingkids.languageprocessing.tests;
+				PRODUCT_NAME = LanguageProcessingTests;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -2496,6 +3113,41 @@
 			};
 			name = Release;
 		};
+		DA3D2416FB7B3A28ABD85420 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "Derived/InfoPlists/SpeechRecognition-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.typingkids.speechrecognition;
+				PRODUCT_NAME = SpeechRecognition;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+					"$(inherited)",
+					DEBUG,
+				);
+				SWIFT_COMPILATION_MODE = singlefile;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		DC4133B60F3D049DBEE8ACC7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2765,6 +3417,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		0AC42F105A2E07C8DCF60C8E /* Build configuration list for PBXNativeTarget "LanguageProcessing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02B8E32BC3AA2A56D4790F39 /* Debug */,
+				50F35547C41D836FA24C924C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		0B18369E87034F3D793B8B04 /* Build configuration list for PBXNativeTarget "TypingKidsApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -2846,6 +3507,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		ABE2DDD4972360C50E37E97C /* Build configuration list for PBXNativeTarget "LanguageProcessingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				292B9966FC9BC76DC4E0365E /* Debug */,
+				5A0DF519EF9EDBFA6B0CB3EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B7F03AFD300525D3472B2095 /* Build configuration list for PBXNativeTarget "PersistenceTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -2860,6 +3530,15 @@
 			buildConfigurations = (
 				C6184B7C79E03071046A820F /* Debug */,
 				BFC9848FA47C68AC2B48A884 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C927A2321A89F7C2B9033A06 /* Build configuration list for PBXNativeTarget "SpeechRecognitionTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50AE9424E9969DC151DFC90B /* Debug */,
+				4CDBBDAB6DC01CC5BC73F65C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2887,6 +3566,15 @@
 			buildConfigurations = (
 				93EB1944BB990D5E9BAD29D4 /* Debug */,
 				728B6A5F3C4BD2C66772A061 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F1B4F00CF1C2DD7ADF432870 /* Build configuration list for PBXNativeTarget "SpeechRecognition" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA3D2416FB7B3A28ABD85420 /* Debug */,
+				420B3647F9770BCE975DD15D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
