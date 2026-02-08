@@ -62,19 +62,19 @@ A SwiftUI macOS app for children ages 7–10 to learn typing and reading skills 
 ```
 
 ## Modules and Boundaries
-- **Core**: Metrics, clocks, Spanish ISO keyboard sanitization.
-- **Persistence**: Local file-based storage and in-memory store for tests.
-- **Stories**: Local JSON repository of Spanish children stories.
-- **AccessibilitySettings**: Font scale + high contrast settings, persisted locally.
-- **TypingPractice**: Typing flow, reaction time, total time, error counting.
-- **ReadingPractice**: Reading flow with per-word timing and speech-based word matching.
-- **LanguageProcessing**: Text normalization, tokenization, and Spanish syllable counting.
-- **SpeechRecognition**: On-device speech recognition abstraction + mock.
-- **UserManagement**: Local users, roles, PIN login, and session handling.
-- **UserProgress**: Per-user storage for typing and reading results.
-- **Statistics**: Tutor-only progress summaries and per-student stats.
-- **StoryPersistence**: SwiftData persistence for custom stories.
-- **StoryManagement**: Tutor-only CRUD for custom stories.
+- **Core** ([README](Modules/Core/README.md)): Metrics, clocks, Spanish ISO keyboard sanitization.
+- **Persistence** ([README](Modules/Persistence/README.md)): Local file-based storage and in-memory store for tests.
+- **Stories** ([README](Modules/Stories/README.md)): Local JSON repository of Spanish children stories.
+- **AccessibilitySettings** ([README](Modules/AccessibilitySettings/README.md)): Font scale + high contrast settings, persisted locally.
+- **TypingPractice** ([README](Modules/TypingPractice/README.md)): Typing flow, reaction time, total time, error counting.
+- **ReadingPractice** ([README](Modules/ReadingPractice/README.md)): Reading flow with per-word timing and speech-based word matching.
+- **LanguageProcessing** ([README](Modules/LanguageProcessing/README.md)): Text normalization, tokenization, and Spanish syllable counting.
+- **SpeechRecognition** ([README](Modules/SpeechRecognition/README.md)): On-device speech recognition abstraction + mock.
+- **UserManagement** ([README](Modules/UserManagement/README.md)): Local users, roles, PIN login, and session handling.
+- **UserProgress** ([README](Modules/UserProgress/README.md)): Per-user storage for typing and reading results.
+- **Statistics** ([README](Modules/Statistics/README.md)): Tutor-only progress summaries and per-student stats.
+- **StoryPersistence** ([README](Modules/StoryPersistence/README.md)): SwiftData persistence for custom stories.
+- **StoryManagement** ([README](Modules/StoryManagement/README.md)): Tutor-only CRUD for custom stories.
 - **App**: Composition root + SwiftUI tabs.
 
 ## Feature Functionality
