@@ -82,9 +82,10 @@ final class TypingKidsAppUITests: XCTestCase {
     }
 
     private func forceLogoutIfNeeded(app: XCUIApplication) {
-        if app.buttons["Accesibilidad"].exists {
-            app.buttons["Accesibilidad"].click()
-            let logout = app.buttons["logout_button"]
+        let profileMenu = app.buttons["profile_menu_button"]
+        if profileMenu.waitForExistence(timeout: 2) {
+            profileMenu.click()
+            let logout = app.buttons["profile_logout_button"]
             if logout.waitForExistence(timeout: 2) {
                 logout.click()
             }

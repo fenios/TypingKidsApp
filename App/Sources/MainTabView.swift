@@ -30,18 +30,34 @@ struct MainTabView: View {
     }
 
     var body: some View {
-        TabView {
-            TypingPracticeView(viewModel: typingViewModel, settingsViewModel: settingsViewModel)
-                .tabItem { Label("Escritura", systemImage: "keyboard") }
+        NavigationStack {
+            TabView {
+                TypingPracticeView(viewModel: typingViewModel, settingsViewModel: settingsViewModel)
+                    .tabItem { Label("Escritura", systemImage: "keyboard") }
             ReadingPracticeView(viewModel: readingViewModel, settingsViewModel: settingsViewModel)
                 .tabItem { Label("Lectura", systemImage: "book") }
-            AccessibilitySettingsView(viewModel: settingsViewModel, onLogout: onLogout)
+            AccessibilitySettingsView(viewModel: settingsViewModel)
                 .tabItem { Label("Accesibilidad", systemImage: "figure.walk.circle") }
-            if user.role == .tutor {
-                StoryManagementView(viewModel: storyManagementViewModel)
-                    .tabItem { Label("Historias", systemImage: "book.closed") }
-                StatisticsView(viewModel: statisticsViewModel)
-                    .tabItem { Label("Estadísticas", systemImage: "chart.bar") }
+                if user.role == .tutor {
+                    StoryManagementView(viewModel: storyManagementViewModel)
+                        .tabItem { Label("Historias", systemImage: "book.closed") }
+                    StatisticsView(viewModel: statisticsViewModel)
+                        .tabItem { Label("Estadísticas", systemImage: "chart.bar") }
+                }
+            }
+            .toolbar {
+                ToolbarItem(placement: .primaryAction) {
+                    Menu {
+                        Button("Cerrar sesión") { onLogout() }
+                            .accessibilityIdentifier("profile_logout_button")
+                    } label: {
+                        HStack(spacing: 8) {
+                            Image(systemName: "person.crop.circle")
+                            Text(user.displayName)
+                        }
+                    }
+                    .accessibilityIdentifier("profile_menu_button")
+                }
             }
         }
         .frame(minWidth: 900, minHeight: 600)

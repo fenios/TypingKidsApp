@@ -3,11 +3,9 @@ import Observation
 
 public struct AccessibilitySettingsView: View {
     @Bindable private var viewModel: AccessibilitySettingsViewModel
-    private let onLogout: (() -> Void)?
 
-    public init(viewModel: AccessibilitySettingsViewModel, onLogout: (() -> Void)? = nil) {
+    public init(viewModel: AccessibilitySettingsViewModel) {
         self.viewModel = viewModel
-        self.onLogout = onLogout
     }
 
     public var body: some View {
@@ -25,12 +23,6 @@ public struct AccessibilitySettingsView: View {
                 Toggle("Alto contraste", isOn: $viewModel.settings.highContrast)
             }
 
-            if let onLogout {
-                Section("Cuenta") {
-                    Button("Cerrar sesión", role: .destructive) { onLogout() }
-                        .accessibilityIdentifier("logout_button")
-                }
-            }
         }
         .padding()
         .onChange(of: viewModel.settings) { _, _ in
