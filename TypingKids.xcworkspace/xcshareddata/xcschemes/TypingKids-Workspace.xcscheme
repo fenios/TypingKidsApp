@@ -182,6 +182,20 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "43B95A18A8B683B91E6F8BDF"
+               BuildableName = "Statistics.framework"
+               BlueprintName = "Statistics"
+               ReferencedContainer = "container:TypingKids.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "FEC2CC1FC06000B4FC2FA81E"
                BuildableName = "Stories.framework"
                BlueprintName = "Stories"
@@ -269,6 +283,34 @@
                BlueprintIdentifier = "5F287D1A0BE8507C3732E1CD"
                BuildableName = "TypingPracticeTests.xctest"
                BlueprintName = "TypingPracticeTests"
+               ReferencedContainer = "container:TypingKids.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E39CFF4B05985FFF4A4A4B92"
+               BuildableName = "UserManagement.framework"
+               BlueprintName = "UserManagement"
+               ReferencedContainer = "container:TypingKids.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "1B32F59182ADDC6913CF6089"
+               BuildableName = "UserProgress.framework"
+               BlueprintName = "UserProgress"
                ReferencedContainer = "container:TypingKids.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

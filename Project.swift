@@ -151,6 +151,49 @@ let project = Project(
             dependencies: [.target(name: "AccessibilitySettings")]
         ),
 
+        // User Management
+        .target(
+            name: "UserManagement",
+            destinations: .macOS,
+            product: .staticFramework,
+            bundleId: "\(bundlePrefix).usermanagement",
+            deploymentTargets: deploymentTargets,
+            infoPlist: .default,
+            sources: ["Modules/UserManagement/Sources/**"],
+            resources: [],
+            dependencies: [.target(name: "Persistence")]
+        ),
+
+        // User Progress
+        .target(
+            name: "UserProgress",
+            destinations: .macOS,
+            product: .staticFramework,
+            bundleId: "\(bundlePrefix).userprogress",
+            deploymentTargets: deploymentTargets,
+            infoPlist: .default,
+            sources: ["Modules/UserProgress/Sources/**"],
+            resources: [],
+            dependencies: [.target(name: "Core"), .target(name: "Persistence")]
+        ),
+
+        // Statistics
+        .target(
+            name: "Statistics",
+            destinations: .macOS,
+            product: .staticFramework,
+            bundleId: "\(bundlePrefix).statistics",
+            deploymentTargets: deploymentTargets,
+            infoPlist: .default,
+            sources: ["Modules/Statistics/Sources/**"],
+            resources: [],
+            dependencies: [
+                .target(name: "Core"),
+                .target(name: "UserManagement"),
+                .target(name: "UserProgress")
+            ]
+        ),
+
         // Typing Practice
         .target(
             name: "TypingPractice",
@@ -164,8 +207,8 @@ let project = Project(
             dependencies: [
                 .target(name: "Core"),
                 .target(name: "Stories"),
-                .target(name: "Persistence"),
-                .target(name: "AccessibilitySettings")
+                .target(name: "AccessibilitySettings"),
+                .target(name: "UserProgress")
             ]
         ),
         .target(
@@ -191,10 +234,10 @@ let project = Project(
             dependencies: [
                 .target(name: "Core"),
                 .target(name: "Stories"),
-                .target(name: "Persistence"),
                 .target(name: "AccessibilitySettings"),
                 .target(name: "LanguageProcessing"),
-                .target(name: "SpeechRecognition")
+                .target(name: "SpeechRecognition"),
+                .target(name: "UserProgress")
             ]
         ),
         .target(
@@ -233,7 +276,10 @@ let project = Project(
                 .target(name: "AccessibilitySettings"),
                 .target(name: "Persistence"),
                 .target(name: "SpeechRecognition"),
-                .target(name: "LanguageProcessing")
+                .target(name: "LanguageProcessing"),
+                .target(name: "UserManagement"),
+                .target(name: "UserProgress"),
+                .target(name: "Statistics")
             ]
         ),
         .target(

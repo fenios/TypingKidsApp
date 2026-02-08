@@ -1,6 +1,6 @@
 import Foundation
 
-public struct TypingMetrics: Equatable, Codable {
+public struct TypingMetrics: Equatable, Codable, Sendable {
     public let reactionTime: TimeInterval
     public let totalTime: TimeInterval
     public let errorCount: Int
@@ -12,7 +12,7 @@ public struct TypingMetrics: Equatable, Codable {
     }
 }
 
-public struct WordTiming: Equatable, Codable {
+public struct WordTiming: Equatable, Codable, Sendable {
     public let word: String
     public let duration: TimeInterval
 
@@ -22,7 +22,7 @@ public struct WordTiming: Equatable, Codable {
     }
 }
 
-public struct ReadingMetrics: Equatable, Codable {
+public struct ReadingMetrics: Equatable, Codable, Sendable {
     public let wordTimings: [WordTiming]
     public let totalTime: TimeInterval
 

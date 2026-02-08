@@ -1,30 +1,36 @@
 import SwiftUI
-import TypingPractice
-import ReadingPractice
-import AccessibilitySettings
+import UserManagement
 
 @MainActor
 struct ContentView: View {
-    @State private var typingViewModel: TypingPracticeViewModel
-    @State private var readingViewModel: ReadingPracticeViewModel
-    @State private var settingsViewModel: AccessibilitySettingsViewModel
+    private let dependencies: AppDependencies
+    @State private var appViewModel: AppRootViewModel
 
     init(dependencies: AppDependencies) {
-        _typingViewModel = State(initialValue: dependencies.typingViewModel)
-        _readingViewModel = State(initialValue: dependencies.readingViewModel)
-        _settingsViewModel = State(initialValue: dependencies.settingsViewModel)
+        self.dependencies = dependencies
+        _appViewModel = State(initialValue: AppRootViewModel(dependencies: dependencies))
     }
 
     var body: some View {
-        TabView {
-            TypingPracticeView(viewModel: typingViewModel, settingsViewModel: settingsViewModel)
-                .tabItem { Label("Escritura", systemImage: "keyboard") }
-            ReadingPracticeView(viewModel: readingViewModel, settingsViewModel: settingsViewModel)
-                .tabItem { Label("Lectura", systemImage: "book") }
-            AccessibilitySettingsView(viewModel: settingsViewModel)
-                .tabItem { Label("Accesibilidad", systemImage: "figure.walk.circle") }
+        Group {
+            if appViewModel.isLoading {
+                ProgressView("Cargando...")
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+            } else if let user = appViewModel.currentUser {
+                MainTabView(
+                    user: user,
+                    dependencies: dependencies,
+                    onLogout: { Task { await appViewModel.logout() } }
+                )
+                .id(user.id)
+            } else {
+                LoginView(
+                    viewModel: dependencies.makeLoginViewModel(),
+                    makeCreateUserViewModel: { dependencies.makeCreateUserViewModel() },
+                    onLogin: { user in appViewModel.handleLogin(user) }
+                )
+            }
         }
-        .frame(minWidth: 900, minHeight: 600)
-        .accessibilityIdentifier("main_tab_view")
+        .task { await appViewModel.loadSession() }
     }
 }

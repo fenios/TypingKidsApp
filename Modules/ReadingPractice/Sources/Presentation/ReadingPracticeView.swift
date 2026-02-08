@@ -106,11 +106,11 @@ public struct ReadingPracticeView: View {
                 .buttonStyle(.borderedProminent)
                 .disabled(!viewModel.hasWords)
                 .accessibilityIdentifier("reading_start_button")
-            Button("Siguiente") { viewModel.nextWord() }
+            Button("Siguiente") { Task { await viewModel.nextWord() } }
                 .buttonStyle(.bordered)
                 .disabled(viewModel.state != .inProgress)
                 .accessibilityIdentifier("reading_next_button")
-            Button("Finalizar") { viewModel.finishSession() }
+            Button("Finalizar") { Task { await viewModel.finishSession() } }
                 .buttonStyle(.bordered)
                 .disabled(viewModel.state != .inProgress)
                 .accessibilityIdentifier("reading_finish_button")

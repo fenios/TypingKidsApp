@@ -2,7 +2,7 @@ import Foundation
 import Observation
 import Core
 import Stories
-import Persistence
+import UserProgress
 
 @MainActor
 @Observable
@@ -13,23 +13,25 @@ public final class TypingPracticeViewModel {
     public var typedText: String = ""
 
     private let storyRepository: StoryRepository
-    private let store: KeyValueStore
+    private let resultsStore: UserResultsStore
     private let clock: Clock
     private let evaluator: TypingEvaluator
-    private let resultsKey = "typing_results"
+    private let userId: UUID
 
     private var sessionStart: Date?
     private var firstKeyTime: Date?
 
     public init(
         storyRepository: StoryRepository,
-        store: KeyValueStore,
+        resultsStore: UserResultsStore,
         clock: Clock,
+        userId: UUID,
         evaluator: TypingEvaluator = TypingEvaluator()
     ) {
         self.storyRepository = storyRepository
-        self.store = store
+        self.resultsStore = resultsStore
         self.clock = clock
+        self.userId = userId
         self.evaluator = evaluator
     }
 
@@ -71,7 +73,7 @@ public final class TypingPracticeViewModel {
         }
     }
 
-    public func finishSession() {
+    public func finishSession() async {
         guard let story = selectedStory, let startedAt = sessionStart else { return }
         let metrics = evaluator.evaluate(
             target: story.text,
@@ -81,14 +83,7 @@ public final class TypingPracticeViewModel {
             endedAt: clock.now()
         )
         let result = TypingResult(storyId: story.id, date: clock.now(), metrics: metrics)
-        saveResult(result)
+        await resultsStore.saveTypingResult(result, for: userId)
         state = .finished(result)
-    }
-
-    private func saveResult(_ result: TypingResult) {
-        let existing = (try? store.get([TypingResult].self, forKey: resultsKey)) ?? []
-        var updated = existing
-        updated.append(result)
-        try? store.set(updated, forKey: resultsKey)
     }
 }

@@ -1,6 +1,6 @@
 import Foundation
 import Speech
-import AVFoundation
+@preconcurrency import AVFoundation
 
 public actor SystemSpeechRecognizer: SpeechRecognizer {
     private var audioEngine: AVAudioEngine?
@@ -41,6 +41,7 @@ public actor SystemSpeechRecognizer: SpeechRecognizer {
         let request = SFSpeechAudioBufferRecognitionRequest()
         request.shouldReportPartialResults = true
         request.requiresOnDeviceRecognition = true
+        request.addsPunctuation = false
 
         let devices = AVCaptureDevice.DiscoverySession(
             deviceTypes: [.microphone, .external],
@@ -50,12 +51,12 @@ public actor SystemSpeechRecognizer: SpeechRecognizer {
         print("Speech devices:", devices.map(\.localizedName))
         guard !devices.isEmpty else { throw SpeechRecognizerError.inputDeviceUnavailable }
 
-        let bufferSize: AVAudioFrameCount = 2048
+        let bufferSize: AVAudioFrameCount = 1024
         let strategies: [AudioCaptureStrategy] = [
-            .captureSession,
-            .inputNodeFormat,
             .inputNodeNilFormat,
-            .mixerNodeFormat
+            .inputNodeFormat,
+            .mixerNodeFormat,
+            .captureSession
         ]
 
         var lastError: NSError?
@@ -206,14 +207,28 @@ public actor SystemSpeechRecognizer: SpeechRecognizer {
 
         switch strategy {
         case .inputNodeFormat:
+            inputNode.removeTap(onBus: 0)
+            let converterContext = Self.makeConverterContext(inputFormat: format)
             inputNode.installTap(onBus: 0, bufferSize: bufferSize, format: format) { buffer, _ in
-                request.append(buffer)
+                if let (converter, targetFormat) = converterContext,
+                   let converted = Self.convertBuffer(buffer, converter: converter, targetFormat: targetFormat) {
+                    request.append(converted)
+                } else {
+                    request.append(buffer)
+                }
             }
             tapNode = inputNode
             tapBus = 0
         case .inputNodeNilFormat:
+            inputNode.removeTap(onBus: 0)
+            let converterContext = Self.makeConverterContext(inputFormat: format)
             inputNode.installTap(onBus: 0, bufferSize: bufferSize, format: nil) { buffer, _ in
-                request.append(buffer)
+                if let (converter, targetFormat) = converterContext,
+                   let converted = Self.convertBuffer(buffer, converter: converter, targetFormat: targetFormat) {
+                    request.append(converted)
+                } else {
+                    request.append(buffer)
+                }
             }
             tapNode = inputNode
             tapBus = 0
@@ -222,8 +237,15 @@ public actor SystemSpeechRecognizer: SpeechRecognizer {
             engine.connect(inputNode, to: mixerNode, format: format)
             mixerNode.outputVolume = 0
             let mixerFormat = mixerNode.outputFormat(forBus: 0)
+            mixerNode.removeTap(onBus: 0)
+            let converterContext = Self.makeConverterContext(inputFormat: mixerFormat)
             mixerNode.installTap(onBus: 0, bufferSize: bufferSize, format: mixerFormat) { buffer, _ in
-                request.append(buffer)
+                if let (converter, targetFormat) = converterContext,
+                   let converted = Self.convertBuffer(buffer, converter: converter, targetFormat: targetFormat) {
+                    request.append(converted)
+                } else {
+                    request.append(buffer)
+                }
             }
             tapNode = mixerNode
             tapBus = 0
@@ -247,9 +269,13 @@ public actor SystemSpeechRecognizer: SpeechRecognizer {
         let session = AVCaptureSession()
         session.beginConfiguration()
 
-        let device = AVCaptureDevice.default(.microphone, for: .audio, position: .unspecified)
-            ?? AVCaptureDevice.default(for: .audio)
-        guard let audioDevice = device else { throw SpeechRecognizerError.inputDeviceUnavailable }
+        let devices = AVCaptureDevice.DiscoverySession(
+            deviceTypes: [.microphone, .external],
+            mediaType: .audio,
+            position: .unspecified
+        ).devices
+        let audioDevice = devices.first(where: { $0.deviceType == .microphone }) ?? devices.first
+        guard let audioDevice else { throw SpeechRecognizerError.inputDeviceUnavailable }
 
         let input = try AVCaptureDeviceInput(device: audioDevice)
         if session.canAddInput(input) {
@@ -277,6 +303,46 @@ public actor SystemSpeechRecognizer: SpeechRecognizer {
         captureSession = nil
         captureDelegate = nil
         captureQueue = nil
+    }
+
+    private static func makeConverterContext(inputFormat: AVAudioFormat) -> (AVAudioConverter, AVAudioFormat)? {
+        guard let targetFormat = AVAudioFormat(commonFormat: .pcmFormatInt16, sampleRate: 16_000, channels: 1, interleaved: true) else {
+            return nil
+        }
+
+        let needsConversion = inputFormat.sampleRate != targetFormat.sampleRate
+            || inputFormat.channelCount != targetFormat.channelCount
+            || inputFormat.commonFormat != targetFormat.commonFormat
+
+        guard needsConversion, let converter = AVAudioConverter(from: inputFormat, to: targetFormat) else {
+            return nil
+        }
+        return (converter, targetFormat)
+    }
+
+    private static func convertBuffer(
+        _ buffer: AVAudioPCMBuffer,
+        converter: AVAudioConverter,
+        targetFormat: AVAudioFormat
+    ) -> AVAudioPCMBuffer? {
+        let ratio = targetFormat.sampleRate / buffer.format.sampleRate
+        let capacity = max(1, AVAudioFrameCount(Double(buffer.frameLength) * ratio))
+        guard let convertedBuffer = AVAudioPCMBuffer(pcmFormat: targetFormat, frameCapacity: capacity) else {
+            return nil
+        }
+
+        var error: NSError?
+        let inputBlock: AVAudioConverterInputBlock = { _, outStatus in
+            outStatus.pointee = .haveData
+            return buffer
+        }
+
+        converter.convert(to: convertedBuffer, error: &error, withInputFrom: inputBlock)
+        if let error {
+            print("Speech conversion error:", error.code, error.localizedDescription)
+            return nil
+        }
+        return convertedBuffer
     }
 }
 

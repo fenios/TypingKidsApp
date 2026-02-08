@@ -83,7 +83,7 @@ public struct TypingPracticeView: View {
             Button("Iniciar") { Task { await viewModel.startSession() } }
                 .buttonStyle(.borderedProminent)
                 .accessibilityIdentifier("typing_start_button")
-            Button("Finalizar") { viewModel.finishSession() }
+            Button("Finalizar") { Task { await viewModel.finishSession() } }
                 .buttonStyle(.bordered)
                 .accessibilityIdentifier("typing_finish_button")
         }

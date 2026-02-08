@@ -2,7 +2,7 @@ import Foundation
 import Observation
 import Core
 import Stories
-import Persistence
+import UserProgress
 import LanguageProcessing
 import SpeechRecognition
 
@@ -20,13 +20,13 @@ public final class ReadingPracticeViewModel {
     public private(set) var emptyStateMessage: String? = nil
 
     private let storyRepository: StoryRepository
-    private let store: KeyValueStore
+    private let resultsStore: UserResultsStore
     private let clock: Clock
     private let speechRecognizer: SpeechRecognizer
     private let normalizer: TextNormalizer
     private let tokenizer: WordTokenizer
     private let syllableCounter: SpanishSyllableCounter
-    private let resultsKey = "reading_results"
+    private let userId: UUID
 
     private var displayWords: [String] = []
     private var normalizedWords: [String] = []
@@ -37,16 +37,18 @@ public final class ReadingPracticeViewModel {
 
     public init(
         storyRepository: StoryRepository,
-        store: KeyValueStore,
+        resultsStore: UserResultsStore,
         clock: Clock,
+        userId: UUID,
         speechRecognizer: SpeechRecognizer,
         normalizer: TextNormalizer = TextNormalizer(),
         tokenizer: WordTokenizer = WordTokenizer(),
         syllableCounter: SpanishSyllableCounter = SpanishSyllableCounter()
     ) {
         self.storyRepository = storyRepository
-        self.store = store
+        self.resultsStore = resultsStore
         self.clock = clock
+        self.userId = userId
         self.speechRecognizer = speechRecognizer
         self.normalizer = normalizer
         self.tokenizer = tokenizer
@@ -143,16 +145,16 @@ public final class ReadingPracticeViewModel {
         }
     }
 
-    public func nextWord() {
-        advanceWordIfPossible()
+    public func nextWord() async {
+        await advanceWordIfPossible()
     }
 
-    public func finishSession() {
+    public func finishSession() async {
         guard let story = selectedStory, let startedAt = sessionStart else { return }
         let totalTime = clock.now().timeIntervalSince(startedAt)
         let metrics = ReadingMetrics(wordTimings: wordTimings, totalTime: totalTime)
         let result = ReadingResult(storyId: story.id, date: clock.now(), metrics: metrics)
-        saveResult(result)
+        await resultsStore.saveReadingResult(result, for: userId)
         state = .finished(result)
         Task { await stopRecognition() }
     }
@@ -174,7 +176,7 @@ public final class ReadingPracticeViewModel {
         let words = tokenizer.tokenize(normalizedTranscript)
         let expected = normalizedWords[currentWordIndex]
         if words.contains(expected) {
-            advanceWordIfPossible()
+            await advanceWordIfPossible()
         }
     }
 
@@ -191,7 +193,7 @@ public final class ReadingPracticeViewModel {
         }
     }
 
-    private func advanceWordIfPossible() {
+    private func advanceWordIfPossible() async {
         guard state == .inProgress else { return }
         guard currentWordIndex < normalizedWords.count else { return }
         let now = clock.now()
@@ -202,7 +204,7 @@ public final class ReadingPracticeViewModel {
         currentWordIndex += 1
         wordStartTime = now
         if currentWordIndex >= normalizedWords.count {
-            finishSession()
+            await finishSession()
         }
     }
 
@@ -246,13 +248,6 @@ public final class ReadingPracticeViewModel {
             resetSession()
         }
         rebuildWordList()
-    }
-
-    private func saveResult(_ result: ReadingResult) {
-        let existing = (try? store.get([ReadingResult].self, forKey: resultsKey)) ?? []
-        var updated = existing
-        updated.append(result)
-        try? store.set(updated, forKey: resultsKey)
     }
 
     private func stopRecognition() async {
