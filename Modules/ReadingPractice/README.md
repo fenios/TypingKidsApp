@@ -7,7 +7,7 @@ Reading practice flow that measures time per word and validates spoken words usi
 - Reading session lifecycle and per-word timing.
 - Algorithm selection (sequential story or syllable-filtered words).
 - Speech recognition integration and word matching.
-- Persist reading results.
+- Persist reading results per user.
 
 ## Key Types
 - `ReadingResult`, `ReadingSessionState`
@@ -18,7 +18,7 @@ Reading practice flow that measures time per word and validates spoken words usi
 ## Dependencies
 - Core
 - Stories
-- Persistence
 - AccessibilitySettings
 - LanguageProcessing
 - SpeechRecognition
+- UserProgress

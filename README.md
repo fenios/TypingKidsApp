@@ -39,6 +39,15 @@ A SwiftUI macOS app for children ages 7–10 to learn typing and reading skills 
     ├── ReadingPractice/
     │   ├── Sources/Domain
     │   └── Sources/Presentation
+    ├── UserManagement/
+    │   ├── Sources/Domain
+    │   ├── Sources/Data
+    │   └── Sources/Presentation
+    ├── UserProgress/
+    │   ├── Sources/Domain
+    │   └── Sources/Data
+    ├── Statistics/
+    │   └── Sources/Presentation
     ├── LanguageProcessing/
     │   ├── Sources
     │   └── Tests
@@ -56,6 +65,9 @@ A SwiftUI macOS app for children ages 7–10 to learn typing and reading skills 
 - **ReadingPractice**: Reading flow with per-word timing and speech-based word matching.
 - **LanguageProcessing**: Text normalization, tokenization, and Spanish syllable counting.
 - **SpeechRecognition**: On-device speech recognition abstraction + mock.
+- **UserManagement**: Local users, roles, PIN login, and session handling.
+- **UserProgress**: Per-user storage for typing and reading results.
+- **Statistics**: Tutor-only progress summaries and per-student stats.
 - **App**: Composition root + SwiftUI tabs.
 
 ## Feature Functionality
@@ -65,9 +77,17 @@ A SwiftUI macOS app for children ages 7–10 to learn typing and reading skills 
 - Accessibility: adjustable font size and high contrast mode.
 - Local stories: bundled Spanish stories for ages 7–10.
 - Local persistence: stores settings and session results on disk.
+- Local login: users with roles (tutor, alumno) and PIN access.
+- Per-user results: typing and reading results are scoped to the active user.
+- Tutor statistics: tutor-only tab with overall and per-student summaries.
 
 ## Metrics Isolation
-All metrics are defined in `Modules/Core/Sources/Domain/Metrics.swift` and reused by Typing and Reading features.
+All metrics and result models are defined in `Modules/Core/Sources/Domain/` and reused by Typing and Reading features.
+
+## Users and Roles
+- Session is required to access the app.
+- Tutor can view statistics.
+- Alumno can access learning tools only.
 
 ## Accessibility
 - Font size scaling
@@ -90,6 +110,7 @@ Stories are stored in `Modules/Stories/Resources/stories.json` and loaded via `L
 ## Tests
 - Unit tests in each module `Tests` folder
 - UI tests for main typing and reading flows in `App/UITests`
+- UI tests cover login, role-based tabs, and statistics visibility.
 
 Run tests from Xcode or via `xcodebuild`.
 
