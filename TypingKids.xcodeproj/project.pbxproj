@@ -111,6 +111,7 @@
 		A681500868B5B43ED1D73113 /* SwiftData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DEFCD51DA431C80CF8B4991 /* SwiftData.framework */; };
 		A90332CAE791A92E3786293D /* SpanishSyllableCounterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C3F4C8BDCC039EC224CB3 /* SpanishSyllableCounterTests.swift */; };
 		A967C37E75771302E1B5AEA6 /* Persistence.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCB76429CA14475D2517C9A7 /* Persistence.framework */; };
+		A9BCB57CED2D412CE8D36C6E /* ReadingAdaptation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDA9BEBAD6B5951E1C63341 /* ReadingAdaptation.swift */; };
 		B05362A22FBD037470274EB1 /* AccessibilitySettings.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 7328F905EC725E1176F1A334 /* AccessibilitySettings.framework */; };
 		B08FB0E5AFA121ED5CD14C6D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3BCFE52EC57F74E2EB426E8 /* AVFoundation.framework */; };
 		B40E0092684A03EDCE3B2436 /* UserProgress.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = F624D9627A0BE47909E49735 /* UserProgress.framework */; };
@@ -131,6 +132,7 @@
 		D23AADC379DB8BE9D862CD22 /* AccessibilitySettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B56A63AFD43F7850891F39F /* AccessibilitySettingsViewModel.swift */; };
 		D5CD47B012AF91AA877B51DB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3BCFE52EC57F74E2EB426E8 /* AVFoundation.framework */; };
 		D95ABBBA76032355EBE43B8F /* ReadingPracticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F53D8A5B9FB9EBA778AD882 /* ReadingPracticeView.swift */; };
+		DA2A23142322922CDFC68066 /* ReadingAdaptationStrategyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CA1CD1569B97152463A698 /* ReadingAdaptationStrategyTests.swift */; };
 		DE9C2118B726E825096B39CD /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2002CE2CDD54AA7F6BED32E2 /* AppDependencies.swift */; };
 		E1CBB6B0E96558D44088BC12 /* Stories.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 236C5B4A07BDCF26C5C85007 /* Stories.framework */; };
 		E256B193DD2388F21A09A27D /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E29953FFA4F47A19BB650A64 /* Core.framework */; };
@@ -949,11 +951,13 @@
 		9148D574D35D6FC8269B2F28 /* TypingPracticeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypingPracticeViewModel.swift; sourceTree = "<group>"; };
 		91B7B45190EC5DA39D031E93 /* UserProgress-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "UserProgress-Info.plist"; sourceTree = "<group>"; };
 		97BBC76502F2704A3C791CEB /* SpanishSyllableCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpanishSyllableCounter.swift; sourceTree = "<group>"; };
+		98CA1CD1569B97152463A698 /* ReadingAdaptationStrategyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingAdaptationStrategyTests.swift; sourceTree = "<group>"; };
 		98D7C6836491D477D15949C3 /* ReadingPractice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReadingPractice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A10441368C8C44ED9DB13418 /* SwiftDataCustomStoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataCustomStoryRepository.swift; sourceTree = "<group>"; };
 		A4AC595D3B00E0B99ABFFE44 /* ReadingPracticeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingPracticeViewModelTests.swift; sourceTree = "<group>"; };
 		A5615F611258D6D3163842C3 /* TypingModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypingModels.swift; sourceTree = "<group>"; };
 		A8F55A72C12CF855881450DA /* StoryManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryManagementView.swift; sourceTree = "<group>"; };
+		ACDA9BEBAD6B5951E1C63341 /* ReadingAdaptation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingAdaptation.swift; sourceTree = "<group>"; };
 		AD2E513B568501CE6934FC0A /* StoryPersistence.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StoryPersistence.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD591B84C82435130BE835F7 /* Statistics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Statistics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2DC523C9B4A427E55415497 /* SystemSpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemSpeechRecognizer.swift; sourceTree = "<group>"; };
@@ -1691,6 +1695,7 @@
 		A43838C122AD71C90BECD670 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				98CA1CD1569B97152463A698 /* ReadingAdaptationStrategyTests.swift */,
 				A4AC595D3B00E0B99ABFFE44 /* ReadingPracticeViewModelTests.swift */,
 			);
 			path = Tests;
@@ -1821,6 +1826,7 @@
 		D7929248E1185ED64AA1A8DD /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				ACDA9BEBAD6B5951E1C63341 /* ReadingAdaptation.swift */,
 				6A6DA984848D582A616DB739 /* ReadingModels.swift */,
 			);
 			path = Domain;
@@ -2822,6 +2828,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA2A23142322922CDFC68066 /* ReadingAdaptationStrategyTests.swift in Sources */,
 				035A6BC5185713910307FADA /* ReadingPracticeViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2973,6 +2980,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9BCB57CED2D412CE8D36C6E /* ReadingAdaptation.swift in Sources */,
 				CF719FD317DA45F52126D62C /* ReadingModels.swift in Sources */,
 				D95ABBBA76032355EBE43B8F /* ReadingPracticeView.swift in Sources */,
 				33743FF8BCF35DA4044E360F /* ReadingPracticeViewModel.swift in Sources */,

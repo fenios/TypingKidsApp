@@ -18,6 +18,7 @@ public final class ReadingPracticeViewModel {
     public private(set) var speechStatus: SpeechRecognizerAuthorizationStatus = .notDetermined
     public private(set) var speechErrorMessage: String? = nil
     public private(set) var emptyStateMessage: String? = nil
+    public private(set) var currentSegmentWordCount: Int = 1
 
     private let storyRepository: StoryRepository
     private let resultsStore: UserResultsStore
@@ -26,6 +27,8 @@ public final class ReadingPracticeViewModel {
     private let normalizer: TextNormalizer
     private let tokenizer: WordTokenizer
     private let syllableCounter: SpanishSyllableCounter
+    private let adaptationConfig: ReadingAdaptationConfig
+    private let adaptationStrategy: ReadingAdaptationStrategy
     private let userId: UUID
 
     private var displayWords: [String] = []
@@ -34,6 +37,9 @@ public final class ReadingPracticeViewModel {
     private var wordTimings: [WordTiming] = []
     private var sessionStart: Date?
     private var recognitionTask: Task<Void, Never>?
+    private var adaptiveController: AdaptiveWordCountController
+    private var wordsSinceLastAdaptation: Int = 0
+    private var pendingComprehensionScore: Double? = nil
 
     public init(
         storyRepository: StoryRepository,
@@ -43,7 +49,9 @@ public final class ReadingPracticeViewModel {
         speechRecognizer: SpeechRecognizer,
         normalizer: TextNormalizer = TextNormalizer(),
         tokenizer: WordTokenizer = WordTokenizer(),
-        syllableCounter: SpanishSyllableCounter = SpanishSyllableCounter()
+        syllableCounter: SpanishSyllableCounter = SpanishSyllableCounter(),
+        adaptationConfig: ReadingAdaptationConfig = .forAges7To10(),
+        adaptationStrategy: ReadingAdaptationStrategy = CombinedReadingAdaptationStrategy()
     ) {
         self.storyRepository = storyRepository
         self.resultsStore = resultsStore
@@ -53,11 +61,22 @@ public final class ReadingPracticeViewModel {
         self.normalizer = normalizer
         self.tokenizer = tokenizer
         self.syllableCounter = syllableCounter
+        self.adaptationConfig = adaptationConfig
+        self.adaptationStrategy = adaptationStrategy
+        self.adaptiveController = AdaptiveWordCountController(config: adaptationConfig, strategy: adaptationStrategy)
+        self.currentSegmentWordCount = adaptationConfig.initialWordCount
     }
 
     public var currentWord: String? {
         guard currentWordIndex < displayWords.count else { return nil }
         return displayWords[currentWordIndex]
+    }
+
+    public var currentSegmentText: String? {
+        guard currentWordIndex < displayWords.count else { return nil }
+        let end = min(currentWordIndex + currentSegmentWordCount, displayWords.count)
+        let segment = displayWords[currentWordIndex..<end]
+        return segment.joined(separator: " ")
     }
 
     public var hasWords: Bool {
@@ -95,6 +114,9 @@ public final class ReadingPracticeViewModel {
 
         currentWordIndex = 0
         wordTimings = []
+        adaptiveController.reset()
+        currentSegmentWordCount = adaptiveController.wordCount
+        wordsSinceLastAdaptation = 0
         sessionStart = clock.now()
         wordStartTime = clock.now()
         state = .inProgress
@@ -165,7 +187,19 @@ public final class ReadingPracticeViewModel {
         wordTimings = []
         sessionStart = nil
         wordStartTime = nil
+        adaptiveController.reset()
+        currentSegmentWordCount = adaptiveController.wordCount
+        wordsSinceLastAdaptation = 0
+        pendingComprehensionScore = nil
         Task { await stopRecognition() }
+    }
+
+    public func recordComprehensionScore(_ score: Double?) {
+        guard let score else {
+            pendingComprehensionScore = nil
+            return
+        }
+        pendingComprehensionScore = min(max(score, 0), 1)
     }
 
     private func handleTranscription(_ transcript: String) async {
@@ -203,9 +237,24 @@ public final class ReadingPracticeViewModel {
         }
         currentWordIndex += 1
         wordStartTime = now
+        wordsSinceLastAdaptation += 1
+        updateAdaptiveSegmentIfNeeded()
         if currentWordIndex >= normalizedWords.count {
             await finishSession()
         }
+    }
+
+    private func updateAdaptiveSegmentIfNeeded() {
+        guard wordsSinceLastAdaptation >= currentSegmentWordCount else { return }
+        let recentCount = min(wordsSinceLastAdaptation, wordTimings.count)
+        guard recentCount > 0 else { return }
+
+        let recentTimings = Array(wordTimings.suffix(recentCount))
+        let sample = ReadingPerformanceSample.fromWordTimings(recentTimings, comprehensionScore: pendingComprehensionScore)
+        pendingComprehensionScore = nil
+
+        currentSegmentWordCount = adaptiveController.register(sample: sample)
+        wordsSinceLastAdaptation = 0
     }
 
     private func rebuildWordList() {
@@ -231,6 +280,9 @@ public final class ReadingPracticeViewModel {
         displayWords = filtered.map { $0.display }
         normalizedWords = filtered.map { $0.normalized }
         currentWordIndex = 0
+        adaptiveController.reset()
+        currentSegmentWordCount = adaptiveController.wordCount
+        wordsSinceLastAdaptation = 0
         if displayWords.isEmpty {
             switch algorithmSelection {
             case .sequentialStorySpeech:
@@ -255,4 +307,18 @@ public final class ReadingPracticeViewModel {
         recognitionTask = nil
         await speechRecognizer.stopRecognition()
     }
+
+    #if DEBUG
+    /// Example usage with sample inputs for unit testing or playground-style validation.
+    public static func exampleAdaptiveUsage() -> [Int] {
+        var controller = AdaptiveWordCountController(config: .forAges7To10())
+        let samples: [ReadingPerformanceSample] = [
+            .init(wpm: 55, varianceSeconds: 0.22, comprehensionScore: 0.9),
+            .init(wpm: 65, varianceSeconds: 0.16, comprehensionScore: 0.85),
+            .init(wpm: 75, varianceSeconds: 0.12, comprehensionScore: 0.8),
+            .init(wpm: 90, varianceSeconds: 0.1, comprehensionScore: 0.9)
+        ]
+        return samples.map { controller.register(sample: $0) }
+    }
+    #endif
 }

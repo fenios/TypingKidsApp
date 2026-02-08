@@ -77,14 +77,14 @@ public struct ReadingPracticeView: View {
 
     private var wordCard: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("Palabra actual")
+            Text("Texto actual")
                 .font(.headline)
             if let message = viewModel.emptyStateMessage {
                 Text(message)
                     .font(.body)
                     .foregroundStyle(.secondary)
             } else {
-                Text(viewModel.currentWord ?? "—")
+                Text(viewModel.currentSegmentText ?? "—")
                     .font(.system(size: 28 * settingsViewModel.settings.fontScale, weight: .bold))
                     .padding()
                     .frame(maxWidth: .infinity, alignment: .leading)
