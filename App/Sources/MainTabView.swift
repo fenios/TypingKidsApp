@@ -5,6 +5,7 @@ import AccessibilitySettings
 import Statistics
 import UserManagement
 import StoryManagement
+import WordLearning
 
 @MainActor
 struct MainTabView: View {
@@ -14,6 +15,7 @@ struct MainTabView: View {
 
     @State private var typingViewModel: TypingPracticeViewModel
     @State private var readingViewModel: ReadingPracticeViewModel
+    @State private var wordLearningViewModel: WordLearningViewModel
     @State private var settingsViewModel: AccessibilitySettingsViewModel
     @State private var statisticsViewModel: StatisticsViewModel
     @State private var storyManagementViewModel: StoryManagementViewModel
@@ -24,6 +26,7 @@ struct MainTabView: View {
         self.onLogout = onLogout
         _typingViewModel = State(initialValue: dependencies.makeTypingViewModel(userId: user.id))
         _readingViewModel = State(initialValue: dependencies.makeReadingViewModel(userId: user.id))
+        _wordLearningViewModel = State(initialValue: dependencies.makeWordLearningViewModel())
         _settingsViewModel = State(initialValue: dependencies.makeSettingsViewModel())
         _statisticsViewModel = State(initialValue: dependencies.makeStatisticsViewModel())
         _storyManagementViewModel = State(initialValue: dependencies.makeStoryManagementViewModel(createdByUserId: user.id))
@@ -34,10 +37,12 @@ struct MainTabView: View {
             TabView {
                 TypingPracticeView(viewModel: typingViewModel, settingsViewModel: settingsViewModel)
                     .tabItem { Label("Escritura", systemImage: "keyboard") }
-            ReadingPracticeView(viewModel: readingViewModel, settingsViewModel: settingsViewModel)
-                .tabItem { Label("Lectura", systemImage: "book") }
-            AccessibilitySettingsView(viewModel: settingsViewModel)
-                .tabItem { Label("Accesibilidad", systemImage: "figure.walk.circle") }
+                ReadingPracticeView(viewModel: readingViewModel, settingsViewModel: settingsViewModel)
+                    .tabItem { Label("Lectura", systemImage: "book") }
+                WordLearningView(viewModel: wordLearningViewModel, settingsViewModel: settingsViewModel)
+                    .tabItem { Label("Vocabulario", systemImage: "text.book.closed") }
+                AccessibilitySettingsView(viewModel: settingsViewModel)
+                    .tabItem { Label("Accesibilidad", systemImage: "figure.walk.circle") }
                 if user.role == .tutor {
                     StoryManagementView(viewModel: storyManagementViewModel)
                         .tabItem { Label("Historias", systemImage: "book.closed") }

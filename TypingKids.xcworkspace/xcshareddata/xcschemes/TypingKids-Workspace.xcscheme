@@ -42,6 +42,34 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "48DCB84F670AB6683261610F"
+               BuildableName = "Clipart.framework"
+               BlueprintName = "Clipart"
+               ReferencedContainer = "container:TypingKids.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B1DE9BB6FAC28AFF66CFDFED"
+               BuildableName = "ClipartTests.xctest"
+               BlueprintName = "ClipartTests"
+               ReferencedContainer = "container:TypingKids.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "8661DF2B6433E23D2E6EF5F1"
                BuildableName = "Core.framework"
                BlueprintName = "Core"
@@ -370,6 +398,34 @@
                ReferencedContainer = "container:TypingKids.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "EF1E877C18983A3E81100795"
+               BuildableName = "WordLearning.framework"
+               BlueprintName = "WordLearning"
+               ReferencedContainer = "container:TypingKids.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "295D259865C0B812A6EDBBB6"
+               BuildableName = "WordLearningTests.xctest"
+               BlueprintName = "WordLearningTests"
+               ReferencedContainer = "container:TypingKids.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -386,6 +442,17 @@
                BlueprintIdentifier = "4DA28502B7090CF72B354E22"
                BuildableName = "AccessibilitySettingsTests.xctest"
                BlueprintName = "AccessibilitySettingsTests"
+               ReferencedContainer = "container:TypingKids.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B1DE9BB6FAC28AFF66CFDFED"
+               BuildableName = "ClipartTests.xctest"
+               BlueprintName = "ClipartTests"
                ReferencedContainer = "container:TypingKids.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -507,6 +574,17 @@
                BlueprintIdentifier = "5F287D1A0BE8507C3732E1CD"
                BuildableName = "TypingPracticeTests.xctest"
                BlueprintName = "TypingPracticeTests"
+               ReferencedContainer = "container:TypingKids.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "295D259865C0B812A6EDBBB6"
+               BuildableName = "WordLearningTests.xctest"
+               BlueprintName = "WordLearningTests"
                ReferencedContainer = "container:TypingKids.xcodeproj">
             </BuildableReference>
          </TestableReference>

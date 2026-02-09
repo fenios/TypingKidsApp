@@ -50,10 +50,20 @@ final class TypingKidsAppUITests: XCTestCase {
         XCTAssertFalse(app.buttons["Historias"].exists)
     }
 
+    func testVocabularyTabShowsWord() {
+        let app = launchApp()
+        createUser(app: app, name: "Tutor", role: "Tutor")
+
+        app.buttons["Vocabulario"].click()
+        XCTAssertTrue(app.otherElements["word_learning_view"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.staticTexts["word_learning_word_label"].waitForExistence(timeout: 2))
+    }
+
     private func launchApp() -> XCUIApplication {
         let app = XCUIApplication()
         app.launchEnvironment["USE_SPEECH_MOCK"] = "1"
         app.launchEnvironment["USE_IN_MEMORY_STORE"] = "1"
+        app.launchEnvironment["USE_CLIPART_MOCK"] = "1"
         app.terminate()
         app.launch()
         return app

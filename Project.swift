@@ -84,6 +84,30 @@ let project = Project(
             dependencies: [.target(name: "SpeechRecognition")]
         ),
 
+        // Clipart
+        .target(
+            name: "Clipart",
+            destinations: .macOS,
+            product: .staticFramework,
+            bundleId: "\(bundlePrefix).clipart",
+            deploymentTargets: deploymentTargets,
+            infoPlist: .default,
+            sources: ["Modules/Clipart/Sources/**"],
+            resources: [],
+            dependencies: [
+                .sdk(name: "WebKit", type: .framework, status: .required)
+            ]
+        ),
+        .target(
+            name: "ClipartTests",
+            destinations: .macOS,
+            product: .unitTests,
+            bundleId: "\(bundlePrefix).clipart.tests",
+            infoPlist: .default,
+            sources: ["Modules/Clipart/Tests/**"],
+            dependencies: [.target(name: "Clipart")]
+        ),
+
         // Persistence
         .target(
             name: "Persistence",
@@ -242,6 +266,34 @@ let project = Project(
             ]
         ),
 
+        // Word Learning
+        .target(
+            name: "WordLearning",
+            destinations: .macOS,
+            product: .staticFramework,
+            bundleId: "\(bundlePrefix).wordlearning",
+            deploymentTargets: deploymentTargets,
+            infoPlist: .default,
+            sources: ["Modules/WordLearning/Sources/**"],
+            resources: [],
+            dependencies: [
+                .target(name: "AccessibilitySettings"),
+                .target(name: "Clipart")
+            ]
+        ),
+        .target(
+            name: "WordLearningTests",
+            destinations: .macOS,
+            product: .unitTests,
+            bundleId: "\(bundlePrefix).wordlearning.tests",
+            infoPlist: .default,
+            sources: ["Modules/WordLearning/Tests/**"],
+            dependencies: [
+                .target(name: "WordLearning"),
+                .target(name: "Clipart")
+            ]
+        ),
+
         // Typing Practice
         .target(
             name: "TypingPractice",
@@ -329,7 +381,8 @@ let project = Project(
                 .target(name: "UserProgress"),
                 .target(name: "Statistics"),
                 .target(name: "StoryPersistence"),
-                .target(name: "StoryManagement")
+                .target(name: "StoryManagement"),
+                .target(name: "WordLearning")
             ]
         ),
         .target(

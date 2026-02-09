@@ -11,96 +11,110 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>Core.xcscheme_^#shared#^_</key>
+		<key>Clipart.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<true/>
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
-		<key>LanguageProcessing.xcscheme_^#shared#^_</key>
+		<key>Core.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<true/>
 			<key>orderHint</key>
-			<integer>3</integer>
+			<integer>2</integer>
 		</dict>
-		<key>Persistence.xcscheme_^#shared#^_</key>
+		<key>LanguageProcessing.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<true/>
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
-		<key>ReadingPractice.xcscheme_^#shared#^_</key>
+		<key>Persistence.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<true/>
 			<key>orderHint</key>
 			<integer>5</integer>
 		</dict>
-		<key>SpeechRecognition.xcscheme_^#shared#^_</key>
+		<key>ReadingPractice.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<true/>
 			<key>orderHint</key>
 			<integer>6</integer>
 		</dict>
-		<key>Statistics.xcscheme_^#shared#^_</key>
+		<key>SpeechRecognition.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<true/>
 			<key>orderHint</key>
 			<integer>7</integer>
 		</dict>
-		<key>Stories.xcscheme_^#shared#^_</key>
+		<key>Statistics.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<true/>
 			<key>orderHint</key>
 			<integer>8</integer>
 		</dict>
-		<key>StoryManagement.xcscheme_^#shared#^_</key>
+		<key>Stories.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<true/>
 			<key>orderHint</key>
 			<integer>9</integer>
 		</dict>
-		<key>StoryPersistence.xcscheme_^#shared#^_</key>
+		<key>StoryManagement.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<true/>
 			<key>orderHint</key>
 			<integer>10</integer>
 		</dict>
-		<key>TypingKidsApp.xcscheme_^#shared#^_</key>
+		<key>StoryPersistence.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<true/>
 			<key>orderHint</key>
-			<integer>12</integer>
+			<integer>11</integer>
 		</dict>
-		<key>TypingPractice.xcscheme_^#shared#^_</key>
+		<key>TypingKidsApp.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<true/>
 			<key>orderHint</key>
 			<integer>13</integer>
 		</dict>
-		<key>UserManagement.xcscheme_^#shared#^_</key>
+		<key>TypingPractice.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<true/>
 			<key>orderHint</key>
 			<integer>14</integer>
 		</dict>
-		<key>UserProgress.xcscheme_^#shared#^_</key>
+		<key>UserManagement.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<true/>
 			<key>orderHint</key>
 			<integer>15</integer>
+		</dict>
+		<key>UserProgress.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>isShown</key>
+			<true/>
+			<key>orderHint</key>
+			<integer>16</integer>
+		</dict>
+		<key>WordLearning.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>isShown</key>
+			<true/>
+			<key>orderHint</key>
+			<integer>17</integer>
 		</dict>
 	</dict>
 </dict>

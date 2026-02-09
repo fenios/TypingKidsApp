@@ -25,6 +25,10 @@ A SwiftUI macOS app for children ages 7–10 to learn typing and reading skills 
     │   └── Sources/Support
     ├── Persistence/
     │   └── Sources/Data
+    ├── Clipart/
+    │   ├── Sources/Domain
+    │   ├── Sources/Data
+    │   └── Sources/Support
     ├── Stories/
     │   ├── Sources/Domain
     │   ├── Sources/Data
@@ -53,6 +57,10 @@ A SwiftUI macOS app for children ages 7–10 to learn typing and reading skills 
     │   └── Sources/Data
     ├── Statistics/
     │   └── Sources/Presentation
+    ├── WordLearning/
+    │   ├── Sources/Domain
+    │   ├── Sources/Data
+    │   └── Sources/Presentation
     ├── LanguageProcessing/
     │   ├── Sources
     │   └── Tests
@@ -64,6 +72,7 @@ A SwiftUI macOS app for children ages 7–10 to learn typing and reading skills 
 ## Modules and Boundaries
 - **Core** ([README](Modules/Core/README.md)): Metrics, clocks, Spanish ISO keyboard sanitization.
 - **Persistence** ([README](Modules/Persistence/README.md)): Local file-based storage and in-memory store for tests.
+- **Clipart** ([README](Modules/Clipart/README.md)): Downloading, caching, and decoding clipart images (PNG/SVG).
 - **Stories** ([README](Modules/Stories/README.md)): Local JSON repository of Spanish children stories.
 - **AccessibilitySettings** ([README](Modules/AccessibilitySettings/README.md)): Font scale + high contrast settings, persisted locally.
 - **TypingPractice** ([README](Modules/TypingPractice/README.md)): Typing flow, reaction time, total time, error counting.
@@ -75,19 +84,21 @@ A SwiftUI macOS app for children ages 7–10 to learn typing and reading skills 
 - **Statistics** ([README](Modules/Statistics/README.md)): Tutor-only progress summaries and per-student stats.
 - **StoryPersistence** ([README](Modules/StoryPersistence/README.md)): SwiftData persistence for custom stories.
 - **StoryManagement** ([README](Modules/StoryManagement/README.md)): Tutor-only CRUD for custom stories.
+- **WordLearning** ([README](Modules/WordLearning/README.md)): Vocabulary practice with clipart images.
 - **App**: Composition root + SwiftUI tabs.
 
 ## Feature Functionality
-- Typing practice: children copy story text, with reaction time, total time, and error metrics.
-- Reading practice: timed per-word reading with automatic speech matching.
-- Reading algorithms: sequential story reading or syllable-filtered words.
-- Accessibility: adjustable font size and high contrast mode.
-- Local stories: bundled Spanish stories for ages 7–10.
-- Local persistence: stores settings and session results on disk.
-- Local login: users with roles (tutor, alumno) and PIN access.
-- Per-user results: typing and reading results are scoped to the active user.
-- Tutor statistics: tutor-only tab with overall and per-student summaries.
-- Custom stories: tutor-only management with SwiftData persistence and visibility for all users.
+- Typing practice: children copy story text, with reaction time, total time, and error metrics. ([TypingPractice](Modules/TypingPractice/README.md))
+- Reading practice: timed per-word reading with automatic speech matching. ([ReadingPractice](Modules/ReadingPractice/README.md))
+- Reading algorithms: sequential story reading or syllable-filtered words. ([ReadingPractice](Modules/ReadingPractice/README.md))
+- Accessibility: adjustable font size and high contrast mode. ([AccessibilitySettings](Modules/AccessibilitySettings/README.md))
+- Local stories: bundled Spanish stories for ages 7–10. ([Stories](Modules/Stories/README.md))
+- Local persistence: stores settings and session results on disk. ([Persistence](Modules/Persistence/README.md))
+- Local login: users with roles (tutor, alumno) and PIN access. ([UserManagement](Modules/UserManagement/README.md))
+- Per-user results: typing and reading results are scoped to the active user. ([UserProgress](Modules/UserProgress/README.md))
+- Tutor statistics: tutor-only tab with overall and per-student summaries. ([Statistics](Modules/Statistics/README.md))
+- Custom stories: tutor-only management with SwiftData persistence and visibility for all users. ([StoryManagement](Modules/StoryManagement/README.md), [StoryPersistence](Modules/StoryPersistence/README.md))
+- Vocabulary with clipart: word practice with downloadable images and caching. ([WordLearning](Modules/WordLearning/README.md), [Clipart](Modules/Clipart/README.md))
 
 ## Metrics Isolation
 All metrics and result models are defined in `Modules/Core/Sources/Domain/` and reused by Typing and Reading features.

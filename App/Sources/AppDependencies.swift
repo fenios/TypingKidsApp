@@ -13,6 +13,8 @@ import UserProgress
 import Statistics
 import StoryPersistence
 import StoryManagement
+import Clipart
+import WordLearning
 
 @MainActor
 struct AppDependencies {
@@ -29,6 +31,8 @@ struct AppDependencies {
     let userRepository: UserRepository
     let sessionRepository: UserSessionRepository
     let resultsStore: UserResultsStore
+    let clipartImageLoader: ClipartImageLoading
+    let vocabularyRepository: VocabularyRepository
 
     init() {
         let useInMemory = ProcessInfo.processInfo.environment["USE_IN_MEMORY_STORE"] == "1"
@@ -63,6 +67,8 @@ struct AppDependencies {
         userRepository = DefaultUserRepository(store: store)
         sessionRepository = DefaultUserSessionRepository(store: store)
         resultsStore = DefaultUserResultsStore(store: store)
+        clipartImageLoader = Self.makeClipartLoader()
+        vocabularyRepository = LocalVocabularyRepository()
     }
 
     func makeSettingsViewModel() -> AccessibilitySettingsViewModel {
@@ -107,10 +113,21 @@ struct AppDependencies {
         StoryManagementViewModel(repository: customStoryRepository, createdByUserId: createdByUserId)
     }
 
+    func makeWordLearningViewModel() -> WordLearningViewModel {
+        WordLearningViewModel(repository: vocabularyRepository, imageLoader: clipartImageLoader)
+    }
+
     private static func makeSpeechRecognizer() -> SpeechRecognizer {
         if ProcessInfo.processInfo.environment["USE_SPEECH_MOCK"] == "1" {
             return SpeechRecognizerMock()
         }
         return SystemSpeechRecognizer()
+    }
+
+    private static func makeClipartLoader() -> ClipartImageLoading {
+        if ProcessInfo.processInfo.environment["USE_CLIPART_MOCK"] == "1" {
+            return ClipartImageLoaderMock()
+        }
+        return ClipartImageLoader()
     }
 }

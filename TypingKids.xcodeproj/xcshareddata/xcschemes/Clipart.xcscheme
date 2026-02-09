@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8D7C24A3940265F7EAF4BADA"
-               BuildableName = "TypingKidsApp.app"
-               BlueprintName = "TypingKidsApp"
+               BlueprintIdentifier = "48DCB84F670AB6683261610F"
+               BuildableName = "Clipart.framework"
+               BlueprintName = "Clipart"
                ReferencedContainer = "container:TypingKids.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,20 +33,9 @@
             parallelizable = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1575AE5DA2BEF4FEAB59F716"
-               BuildableName = "TypingKidsAppTests.xctest"
-               BlueprintName = "TypingKidsAppTests"
-               ReferencedContainer = "container:TypingKids.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO"
-            parallelizable = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2BB0D5F4140700531AEB8255"
-               BuildableName = "TypingKidsAppUITests.xctest"
-               BlueprintName = "TypingKidsAppUITests"
+               BlueprintIdentifier = "B1DE9BB6FAC28AFF66CFDFED"
+               BuildableName = "ClipartTests.xctest"
+               BlueprintName = "ClipartTests"
                ReferencedContainer = "container:TypingKids.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -62,16 +51,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8D7C24A3940265F7EAF4BADA"
-            BuildableName = "TypingKidsApp.app"
-            BlueprintName = "TypingKidsApp"
+            BlueprintIdentifier = "48DCB84F670AB6683261610F"
+            BuildableName = "Clipart.framework"
+            BlueprintName = "Clipart"
             ReferencedContainer = "container:TypingKids.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -79,16 +67,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8D7C24A3940265F7EAF4BADA"
-            BuildableName = "TypingKidsApp.app"
-            BlueprintName = "TypingKidsApp"
+            BlueprintIdentifier = "48DCB84F670AB6683261610F"
+            BuildableName = "Clipart.framework"
+            BlueprintName = "Clipart"
             ReferencedContainer = "container:TypingKids.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
